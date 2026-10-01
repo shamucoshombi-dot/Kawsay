@@ -1,4 +1,5 @@
 import { Component, useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Lenis from "lenis";
 import { Toaster } from "sonner";
 import Navbar from "./components/Navbar";
@@ -9,6 +10,7 @@ import Galeria from "./components/Galeria";
 import Catalogo from "./components/Catalogo";
 import Contacto from "./components/Contacto";
 import Footer from "./components/Footer";
+import PanelDocente from "./pages/PanelDocente";
 import "./App.css";
 
 class ErrorBoundary extends Component {
@@ -80,7 +82,13 @@ function Page() {
 export default function App() {
     return (
         <ErrorBoundary>
-            <Page />
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Page />} />
+                    <Route path="/panel" element={<PanelDocente />} />
+                    <Route path="*" element={<Page />} />
+                </Routes>
+            </BrowserRouter>
         </ErrorBoundary>
     );
 }

@@ -30,13 +30,16 @@ Desarrollar una página web informativa para el proyecto estudiantil KAWSAY (Alu
 ## Implementado (2026-10-01)
 - Landing completa (todas las secciones), animaciones sutiles (reveals, marquee, hover, parallax hero, reveal enmascarado línea por línea).
 - Formulario con guardado real en MongoDB (`POST /api/contact`) verificado con curl y desde la UI.
+- Fondos de sección verdosos (sage #E7EDD8) en Nosotros y Catálogo.
+- Tarjetas especiales con motivo característico en CSS puro: PERÚ con franjas verticales rojo/blanco/rojo sutiles + chip de bandera; ALFONSO UGARTE con lavado guinda/amarillo, aro dorado y chip guinda/amarillo.
+- Panel docente en `/panel` (enlace discreto en el footer): login JWT + bcrypt (docente@kawsay.pe, sembrado desde backend/.env), listado de mensajes con estado leído/no leído, marcar como leído (`PUT /api/contact/{id}/read`), logout, protección de 5 intentos fallidos/15 min. GET /api/contact protegido con cookie httpOnly o Bearer; orígenes de preview de la plataforma permitidos.
 - Responsive 1440/390 verificado con capturas; sin desbordamiento horizontal.
 
 ## Backlog priorizado
 - P0: Reemplazar marcadores por fotos reales (hero, galería, catálogo) — solo cambiar `src` o los labels.
 - P1: Cargar datos reales en tarjetas PERÚ / ALFONSO UGARTE y canales de contacto (número profesora, WhatsApp, Instagram).
 - P1: Nombres/descripciones definitivos de los 12 diseños y ajuste del precio si cambia.
-- P2: Panel simple para docentes que lea `GET /api/contact`; admin de productos.
+- P2: Cambio de contraseña del docente dentro del panel; respuestas a mensajes.
 
 ## Próximas tareas
 1. Sustituir marcadores de imagen por fotografías definitivas.

@@ -56,7 +56,16 @@ export default function Footer() {
 
                 <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-kawsay-ivory/15 pt-6 text-xs text-kawsay-ivory/50 sm:flex-row sm:items-center">
                     <p>© {new Date().getFullYear()} Kawsay · Proyecto estudiantil</p>
-                    <p>Espacio reservado para información institucional y créditos</p>
+                    <div className="flex items-center gap-4">
+                        <p>Espacio reservado para información institucional y créditos</p>
+                        <a
+                            href="/panel"
+                            data-testid="footer-panel-link"
+                            className="font-bold text-kawsay-moss underline decoration-kawsay-moss/50 underline-offset-4 transition-colors hover:text-kawsay-ivory"
+                        >
+                            Panel docente
+                        </a>
+                    </div>
                 </div>
             </div>
         </footer>

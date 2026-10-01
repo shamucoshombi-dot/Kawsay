@@ -29,7 +29,7 @@ const Card = ({ icon: Icon, title, children, delay = 0 }) => (
 
 export default function Nosotros() {
     return (
-        <section id="nosotros" className="scroll-mt-20 bg-kawsay-cream/60 py-20 sm:py-28">
+        <section id="nosotros" className="scroll-mt-20 bg-kawsay-sage/70 py-20 sm:py-28">
             <div className="mx-auto max-w-6xl px-5 sm:px-8">
                 <Reveal>
                     <SectionTag>Nosotros</SectionTag>
@@ -98,15 +98,29 @@ export default function Nosotros() {
                     <Reveal delay={0.05}>
                         <div
                             data-testid="card-peru"
-                            className="group h-full rounded-[2rem] border-2 border-kawsay-peru/25 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-kawsay-peru/50 hover:shadow-soft"
+                            style={{
+                                backgroundImage:
+                                    "linear-gradient(90deg, rgba(196,59,47,0.09) 0%, rgba(196,59,47,0.09) 17%, rgba(196,59,47,0.015) 17%, rgba(196,59,47,0.015) 83%, rgba(196,59,47,0.09) 83%)",
+                            }}
+                            className="group h-full rounded-[2rem] border-2 border-kawsay-peru/30 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-kawsay-peru/50 hover:shadow-soft"
                         >
                             <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-kawsay-peru/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-kawsay-peru">
                                 <span className="h-2 w-2 rounded-full bg-kawsay-peru" />
                                 Edición especial
                             </span>
-                            <h3 className="font-display text-2xl font-semibold text-kawsay-peru sm:text-3xl">
-                                PERÚ
-                            </h3>
+                            <div className="flex items-center gap-3">
+                                <h3 className="font-display text-2xl font-semibold text-kawsay-peru sm:text-3xl">
+                                    PERÚ
+                                </h3>
+                                <span
+                                    aria-hidden
+                                    className="inline-flex h-4 w-7 shrink-0 overflow-hidden rounded-sm border border-kawsay-peru/25"
+                                >
+                                    <span className="w-[30%] bg-kawsay-peru/80" />
+                                    <span className="w-[40%] bg-white" />
+                                    <span className="w-[30%] bg-kawsay-peru/80" />
+                                </span>
+                            </div>
                             <p className="mt-3 text-[15px] leading-relaxed text-kawsay-bark">
                                 Tarjeta preparada con una paleta inspirada en los colores
                                 nacionales. La información específica se agregará
@@ -117,9 +131,13 @@ export default function Nosotros() {
                     <Reveal delay={0.12}>
                         <div
                             data-testid="card-alfonso-ugarte"
-                            className="group h-full rounded-[2rem] border-2 border-kawsay-guinda/25 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-kawsay-guinda/50 hover:shadow-soft"
+                            style={{
+                                backgroundImage:
+                                    "radial-gradient(circle at 12% 18%, rgba(232,184,0,0.12), transparent 42%), radial-gradient(circle at 88% 88%, rgba(123,18,48,0.10), transparent 48%)",
+                            }}
+                            className="group h-full rounded-[2rem] border-2 border-kawsay-guinda/30 bg-white p-8 ring-2 ring-kawsay-gold/50 transition-all duration-300 hover:-translate-y-1 hover:border-kawsay-guinda/50 hover:shadow-soft"
                         >
-                            <div className="mb-5 flex items-center gap-4">
+                            <div className="mb-5 flex flex-wrap items-center gap-4">
                                 <img
                                     src="/au-logo.png"
                                     alt="Logo de la escuela emblemática Alfonso Ugarte"
@@ -129,9 +147,18 @@ export default function Nosotros() {
                                     Edición institucional
                                 </span>
                             </div>
-                            <h3 className="font-display text-2xl font-semibold text-kawsay-guinda sm:text-3xl">
-                                ALFONSO UGARTE
-                            </h3>
+                            <div className="flex items-center gap-3">
+                                <h3 className="font-display text-2xl font-semibold text-kawsay-guinda sm:text-3xl">
+                                    ALFONSO UGARTE
+                                </h3>
+                                <span
+                                    aria-hidden
+                                    className="inline-flex h-4 w-7 shrink-0 overflow-hidden rounded-sm border border-kawsay-guinda/25"
+                                >
+                                    <span className="w-1/2 bg-kawsay-guinda/80" />
+                                    <span className="w-1/2 bg-kawsay-gold/80" />
+                                </span>
+                            </div>
                             <p className="mt-3 text-[15px] leading-relaxed text-kawsay-bark">
                                 Tarjeta con los colores institucionales guinda y amarillo.
                                 La información específica se agregará próximamente.

@@ -59,6 +59,7 @@ module.exports = {
           ivory: '#F7F3EA',
           cream: '#EFE8D8',
           sand: '#E2D8C0',
+          sage: '#E7EDD8',
           line: '#E3DAC3',
           forest: '#33422C',
           pine: '#3E5233',

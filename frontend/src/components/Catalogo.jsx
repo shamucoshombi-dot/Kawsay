@@ -6,7 +6,7 @@ const DISENOS = Array.from({ length: 12 }, (_, i) => String(i + 1).padStart(2, "
 
 export default function Catalogo({ onInterest }) {
     return (
-        <section id="catalogo" className="scroll-mt-20 bg-kawsay-cream/60 py-20 sm:py-28">
+        <section id="catalogo" className="scroll-mt-20 bg-kawsay-sage/70 py-20 sm:py-28">
             <div className="mx-auto max-w-6xl px-5 sm:px-8">
                 <Reveal>
                     <SectionTag>Catálogo</SectionTag>
