@@ -1,0 +1,317 @@
+{
+  "project_info": {
+    "name": "KAWSAY",
+    "tagline": "Creando, aprendiendo y transformando juntos.",
+    "language": "es",
+    "project_type": "Student Educational Project (Colegio Alfonso Ugarte, Perú)",
+    "product": "Reusable Tocuyo fabric bags with Peruvian identity designs & personal growth messages",
+    "methodology": "STEAM + H (Ciencia, Tecnología, Ingeniería, Arte, Matemática + Humanidades)"
+  },
+  "aesthetic_direction": {
+    "theme_style": "Minimalist, natural, modern, educational, artisanal, eco-sustainable, subtle Peruvian identity",
+    "palette_vibe": "Warm earth tones inspired directly by the Kawsay logo (natural greens, olive, earth brown, warm cream/ivory, off-white)",
+    "forbidden_styles": [
+      "No heavy black backgrounds",
+      "No bright neon colors or harsh tech gradients",
+      "No corporate/generic startup look",
+      "No over-cluttered desktop layouts",
+      "Do NOT redesign or alter the provided Kawsay logo"
+    ],
+    "shapes_and_textures": "Organic soft curves (rounded-2xl, rounded-3xl), subtle leaf/earth motif accents, generous breathing room, tactile canvas-like card borders"
+  },
+  "typography": {
+    "heading_font": "Outfit or Plus Jakarta Sans (Rounded, organic, warm modern feel)",
+    "body_font": "Plus Jakarta Sans or DM Sans (Clean, highly legible, soft human touch)",
+    "hierarchy": {
+      "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#2D3B2D]",
+      "h2_section": "text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2D3B2D] tracking-tight",
+      "h3_card": "text-xl sm:text-2xl font-semibold text-[#3E2B22]",
+      "body_lead": "text-lg text-[#5A4E46] leading-relaxed",
+      "body": "text-base text-[#5A4E46] leading-relaxed",
+      "caption_badge": "text-xs uppercase tracking-widest font-semibold text-[#5B703A]"
+    }
+  },
+  "colors": {
+    "background_main": "#FAF7F2",
+    "background_alt": "#F3EDE2",
+    "card_bg": "#FFFFFF",
+    "text_primary": "#2D3B2D",
+    "text_secondary": "#5A4E46",
+    "text_muted": "#8A7B70",
+    "primary_green": "#3B603D",
+    "primary_green_hover": "#2E4B30",
+    "olive_green": "#687D43",
+    "earth_brown": "#7A5039",
+    "warm_border": "#E6DEC3",
+    "special_cards": {
+      "peru_card": {
+        "title": "EDICIÓN PERÚ",
+        "bg": "bg-gradient-to-br from-[#FFF5F5] via-[#FFFFFF] to-[#FFF0F0]",
+        "border": "border-[#E53E3E]/30",
+        "primary_accent": "#C53030",
+        "badge_bg": "#FFF5F5",
+        "badge_text": "#9B2C2C",
+        "description": "Inspirada en nuestros símbolos nacionales, arte textil ancestral y riqueza natural."
+      },
+      "alfonso_ugarte_card": {
+        "title": "EDICIÓN ALFONSO UGARTE",
+        "bg": "bg-gradient-to-br from-[#FDF2F4] via-[#FFFFFF] to-[#FEF9E7]",
+        "border": "border-[#701C2E]/30",
+        "primary_accent": "#701C2E",
+        "secondary_accent": "#D99B26",
+        "badge_bg": "#701C2E",
+        "badge_text": "#FFFFFF",
+        "description": "Homenaje a la comunidad institucional del Colegio Alfonso Ugarte, vistiendo los colores guinda y amarillo con orgullo ugarteño."
+      }
+    }
+  },
+  "navigation": {
+    "type": "Fixed header with backdrop glassmorphism",
+    "bg_style": "bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#E6DCC8]/60 z-50",
+    "logo_placement": "Left side - KAWSAY logo image + text brand",
+    "menu_items": [
+      { "label": "Inicio", "target_id": "inicio" },
+      { "label": "Nosotros", "target_id": "nosotros" },
+      { "label": "Galería", "target_id": "galeria" },
+      { "label": "Catálogo", "target_id": "catalogo" },
+      { "label": "Contáctanos", "target_id": "contactanos" }
+    ],
+    "mobile": "Smooth sliding drawer / sheet menu with accessible toggle button (data-testid='mobile-menu-button')"
+  },
+  "sections_breakdown": {
+    "hero": {
+      "id": "inicio",
+      "title": "KAWSAY",
+      "slogan": "Creando, aprendiendo y transformando juntos.",
+      "intro_text": "Una iniciativa estudiantil ecológica y educativa del Colegio Alfonso Ugarte. Elaboramos bolsas sostenibles de tela tocuyo con diseños de identidad peruana y frases de desarrollo personal mediante la metodología STEAM + H.",
+      "cta_button": "Conoce nuestro proyecto",
+      "cta_target": "nosotros",
+      "image_slot": {
+        "label": "Espacio para imagen principal del proyecto",
+        "placeholder_text": "Foto Principal Kawsay (Bolsa de tocuyo y estudiantes)",
+        "recommended_aspect": "aspect-[4/3] sm:aspect-[16/10]",
+        "url": "https://images.unsplash.com/photo-1544816155-12df9643f363?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwzfHxjYW52YXMlMjB0b3RlJTIwYmFnJTIwcHJvZHVjdCUyMGNyYWZ0JTIwZmFicmljJTIwZWNvfGVufDB8fHx8MTc9MDgxOTI0M3ww&ixlib=rb-4.1.0&q=85"
+      }
+    },
+    "nosotros": {
+      "id": "nosotros",
+      "title": "Nosotros",
+      "blocks": [
+        {
+          "subtitle": "¿Quiénes somos?",
+          "text": "Somos un equipo de estudiantes del Colegio Alfonso Ugarte motivados por el cuidado ambiental y la revalorización de nuestra identidad cultural. KAWSAY (palabra quechua que significa 'Vida') promueve el consumo responsable y el crecimiento personal."
+        },
+        {
+          "subtitle": "¿Qué es STEAM + H?",
+          "description": "Una perspectiva pedagógica integral que combina 6 disciplinas fundamentales:",
+          "disciplines": [
+            { "code": "S", "name": "Ciencia", "desc": "Investigación sobre fibras naturales, biodegradabilidad del tocuyo y pigmentos ecológicos." },
+            { "code": "T", "name": "Tecnología", "desc": "Diseño digital de patrones, herramientas de difusión web y gestión tecnológica del proyecto." },
+            { "code": "E", "name": "Ingeniería", "desc": "Estructuración del proceso productivo, patronaje eficiente y optimización de materiales." },
+            { "code": "A", "name": "Arte", "desc": "Expresión gráfica inspirada en iconografía peruana y estética textil artesanal." },
+            { "code": "M", "name": "Matemática", "desc": "Costos de producción, costeo accesible (S/ 10.00), geometría del corte y análisis cuantitativo." },
+            { "code": "H", "name": "Humanidades", "desc": "Mensajes de desarrollo personal, empatía comunitaria, reflexión ética y conciencia social." }
+          ]
+        },
+        {
+          "subtitle": "STEAM + H en Kawsay",
+          "text": "Cada bolsa de tocuyo es el resultado vivencial de aplicar el pensamiento crítico, la creatividad artística y la responsabilidad comunitaria aprendidos en nuestras aulas."
+        },
+        {
+          "subtitle": "Nuestro Producto",
+          "text": "Bolsas de tela tocuyo 100% reutilizables, resistentes y lavables. Estampadas con arte original peruano y frases edificantes que transmiten optimismo e identidad en el día a día."
+        }
+      ]
+    },
+    "galeria": {
+      "id": "galeria",
+      "title": "Galería del Proyecto",
+      "intro": "Explora las etapas de trabajo, desarrollo y colaboración estudiantil que hacen posible Kawsay.",
+      "blocks": [
+        {
+          "key": "trabajo_colaborativo",
+          "title": "Trabajo colaborativo",
+          "desc": "Estudiantes reunidos intercambiando ideas, organizando roles y coordinando las metas del proyecto.",
+          "image_url": "https://images.unsplash.com/photo-1568805778796-96b66708d6e0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwzfHxwZXJ1JTIwY3JhZnQlMjB0ZXh0aWxlJTIwbmF0dXJhbCUyMHBhdHRlcm4lMjBpbmRpZ2Vub3VzfGVufDB8fHx8MTc5MDgxOTIzNnww&ixlib=rb-4.1.0&q=85"
+        },
+        {
+          "key": "creacion_y_diseno",
+          "title": "Creación y diseño",
+          "desc": "Bocetos manuales y digitales de estampados peruano-contemporáneos y tipografías motivacionales.",
+          "image_url": "https://images.unsplash.com/photo-1568805778719-c768512debe8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwxfHxwZXJ1JTIwY3JhZnQlMjB0ZXh0aWxlJTIwbmF0dXJhbCUyMHBhdHRlcm4lMjBpbmRpZ2Vub3VzfGVufDB8fHx8MTc5MDgxOTIzNnww&ixlib=rb-4.1.0&q=85"
+        },
+        {
+          "key": "elaboracion",
+          "title": "Elaboración",
+          "desc": "Corte de tocuyo, confección artesanal y serigrafía/estampado con acabado cuidadoso.",
+          "image_url": "https://images.unsplash.com/photo-1589682449071-d13c27d1c298?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHw0fHxwZXJ1JTIwY3JhZnQlMjB0ZXh0aWxlJTIwbmF0dXJhbCUyMHBhdHRlcm4lMjBpbmRpZ2Vub3VzfGVufDB8fHx8MTc5MDgxOTIzNnww&ixlib=rb-4.1.0&q=85"
+        },
+        {
+          "key": "participacion_estudiantil",
+          "title": "Participación estudiantil",
+          "desc": "Presentación escolar, ferias educativas y difusión comunitaria liderada por los alumnos.",
+          "image_url": "https://images.unsplash.com/photo-1563837738662-c86ef2ba99f8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwyfHxwZXJ1JTIwY3JhZnQlMjB0ZXh0aWxlJTIwbmF0dXJhbCUyMHBhdHRlcm4lMjBpbmRpZ2Vub3VzfGVufDB8fHx8MTc5MDgxOTIzNnww&ixlib=rb-4.1.0&q=85"
+        }
+      ]
+    },
+    "catalogo": {
+      "id": "catalogo",
+      "title": "Catálogo de Diseños",
+      "intro": "Bolsas de tocuyo reutilizables elaboradas por estudiantes. Cada modelo transmite un mensaje de crecimiento personal e identidad peruana.",
+      "price_standard": "S/ 10.00",
+      "item_count": 12,
+      "items": [
+        {
+          "id": 1,
+          "name": "Diseño Kawsay 01 - Raíces y Futuro",
+          "description": "Estampado de iconografía andina con frase inspiradora sobre persistencia y raíces culturalmente sólidas.",
+          "price": "S/ 10.00",
+          "type": "standard",
+          "image_url": "https://images.unsplash.com/photo-1544816155-12df9643f363?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwzfHxjYW52YXMlMjB0b3RlJTIwYmFnJTIwcHJvZHVjdCUyMGNyYWZ0JTIwZmFicmljJTIwZWNvfGVufDB8fHx8MTc5MDgxOTI0M3ww&ixlib=rb-4.1.0&q=85"
+        },
+        {
+          "id": 2,
+          "name": "Diseño Kawsay 02 - Edición PERÚ",
+          "description": "Diseño especial destacando la escarapela y guardas textiles tradicionales con tonos rojos y blancos nacionales.",
+          "price": "S/ 10.00",
+          "type": "special_peru",
+          "image_url": "https://images.pexels.com/photos/4937323/pexels-photo-4937323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        },
+        {
+          "id": 3,
+          "name": "Diseño Kawsay 03 - Edición ALFONSO UGARTE",
+          "description": "Modelo institucional con los colores emblemáticos guinda y amarillo, celebrando la identidad ugarteña.",
+          "price": "S/ 10.00",
+          "type": "special_algarte",
+          "image_url": "https://images.pexels.com/photos/9869067/pexels-photo-9869067.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        },
+        {
+          "id": 4,
+          "name": "Diseño Kawsay 04 - Sembrando Cambio",
+          "description": "Ilustración botánica peruana acompañada de una frase reflexiva sobre el cuidado ambiental.",
+          "price": "S/ 10.00",
+          "type": "standard",
+          "image_url": "https://images.unsplash.com/photo-1630381260512-e3fe55c11973?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwyfHxjYW52YXMlMjB0b3RlJTIwYmFnJTIwcHJvZHVjdCUyMGNyYWZ0JTIwZmFicmljJTIwZWNvfGVufDB8fHx8MTc9MDgxOTI0M3ww&ixlib=rb-4.1.0&q=85"
+        },
+        {
+          "id": 5,
+          "name": "Diseño Kawsay 05 - Fuerza y Constancia",
+          "description": "Patrón abstracto geométrico estilizado con un mensaje motivacional de superación académica.",
+          "price": "S/ 10.00",
+          "type": "standard",
+          "image_url": "https://images.unsplash.com/photo-1574365569389-a10d488ca3fb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwxfHxjYW52YXMlMjB0b3RlJTIwYmFnJTIwcHJvZHVjdCUyMGNyYWZ0JTIwZmFicmljJTIwZWNvfGVufDB8fHx8MTc9MDgxOTI0M3ww&ixlib=rb-4.1.0&q=85"
+        },
+        {
+          "id": 6,
+          "name": "Diseño Kawsay 06 - Armonía Natural",
+          "description": "Composición inspirada en la biodiversidad de los Andes peruanos y la vida en sostenibilidad.",
+          "price": "S/ 10.00",
+          "type": "standard",
+          "image_url": "https://images.unsplash.com/photo-1632942480766-9cee148c4ee8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHw0fHxjYW52YXMlMjB0b3RlJTIwYmFnJTIwcHJvZHVjdCUyMGNyYWZ0JTIwZmFicmljJTIwZWNvfGVufDB8fHx8MTc9MDgxOTI0M3ww&ixlib=rb-4.1.0&q=85"
+        },
+        {
+          "id": 7,
+          "name": "Diseño Kawsay 07 - Sabiduría Ancestral",
+          "description": "Motivos preincas reinterpretados por alumnos de secundaria con pigmentos ecológicos.",
+          "price": "S/ 10.00",
+          "type": "standard",
+          "image_url": "https://images.unsplash.com/photo-1598836289029-895cc0ddcb8f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwzfHx0b3RlJTIwYmFnJTIwY2FudmFzJTIwbmF0dXJhbCUyMGVjbyUyMGZyaWVuZGx5JTIwb3JnYW5pY3xlbnwwfHx8fDE3OTA4MTkyMzZ8MA&ixlib=rb-4.1.0&q=85"
+        },
+        {
+          "id": 8,
+          "name": "Diseño Kawsay 08 - Mente Creadora",
+          "description": "Enfoque STEAM integrado: gráficos matemáticos y poéticos sobre tela natural de tocuyo.",
+          "price": "S/ 10.00",
+          "type": "standard",
+          "image_url": "https://images.unsplash.com/photo-1537130508986-20f4fd870b4e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwyfHx0b3RlJTIwYmFnJTIwY2FudmFzJTIwbmF0dXJhbCUyMGVjbyUyMGZyaWVuZGx5JTIwb3JnYW5pY3xlbnwwfHx8fDE3OTA4MTkyMzZ8MA&ixlib=rb-4.1.0&q=85"
+        },
+        {
+          "id": 9,
+          "name": "Diseño Kawsay 09 - Uniendo Voces",
+          "description": "Arte colaborativo de Humanidades expresando solidaridad, respeto y trabajo en equipo.",
+          "price": "S/ 10.00",
+          "type": "standard",
+          "image_url": "https://images.unsplash.com/photo-1570913196376-dacb677ef459?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwxfHx0b3RlJTIwYmFnJTIwY2FudmFzJTIwbmF0dXJhbCUyMGVjbyUyMGZyaWVuZGx5JTIwb3JnYW5pY3xlbnwwfHx8fDE3OTA4MTkyMzZ8MA&ixlib=rb-4.1.0&q=85"
+        },
+        {
+          "id": 10,
+          "name": "Diseño Kawsay 10 - Florecer Estudiantil",
+          "description": "Diseño florístico minimalista con frase sobre la importancia de la educación pública y constante.",
+          "price": "S/ 10.00",
+          "type": "standard",
+          "image_url": "https://images.unsplash.com/photo-1537081521012-e2f7747a84e7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHw0fHx0b3RlJTIwYmFnJTIwY2FudmFzJTIwbmF0dXJhbCUyMGVjbyUyMGZyaWVuZGx5JTIwb3JnYW5pY3xlbnwwfHx8fDE3OTA4MTkyMzZ8MA&ixlib=rb-4.1.0&q=85"
+        },
+        {
+          "id": 11,
+          "name": "Diseño Kawsay 11 - Latido Urbano",
+          "description": "Combinación moderna de la silueta limeña con trazos orgánicos de hojas de tocuyo.",
+          "price": "S/ 10.00",
+          "type": "standard",
+          "image_url": "https://images.unsplash.com/photo-1544816155-12df9643f363?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwzfHxjYW52YXMlMjB0b3RlJTIwYmFnJTIwcHJvZHVjdCUyMGNyYWZ0JTIwZmFicmljJTIwZWNvfGVufDB8fHx8MTc9MDgxOTI0M3ww&ixlib=rb-4.1.0&q=85"
+        },
+        {
+          "id": 12,
+          "name": "Diseño Kawsay 12 - Huella Verde",
+          "description": "Símbolo de huella ecológica con mensaje en quechua y español reconociendo nuestro entorno.",
+          "price": "S/ 10.00",
+          "type": "standard",
+          "image_url": "https://images.pexels.com/photos/9869067/pexels-photo-9869067.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        }
+      ]
+    },
+    "contactanos": {
+      "id": "contactanos",
+      "title": "Contáctanos",
+      "intro": "¿Tienes alguna duda sobre el proyecto Kawsay o deseas manifestar tu interés por nuestras bolsas de tocuyo? Escríbenos directamente.",
+      "placeholders": {
+        "teacher_number": "+51 987 654 321 (Docente Asesora del Proyecto Kawsay)",
+        "whatsapp": "https://wa.me/51987654321?text=Hola,%20deseo%20más%20información%20sobre%20el%20proyecto%20Kawsay",
+        "instagram": "@kawsay.alfonsougarte"
+      },
+      "form": {
+        "fields": [
+          { "name": "nombre", "label": "Nombre completo", "type": "text", "placeholder": "Ej. María García", "required": true },
+          { "name": "medio_contacto", "label": "Teléfono o Correo electrónico", "type": "text", "placeholder": "Ej. 912345678 o usuario@correo.com", "required": true },
+          { "name": "motivo", "label": "Motivo de consulta", "type": "select", "options": ["Interés en comprar bolsas Kawsay", "Consulta sobre proyecto STEAM+H", "Sugerencia o felicitación", "Otro motivo"], "required": true },
+          { "name": "mensaje", "label": "Mensaje", "type": "textarea", "placeholder": "Escribe tu mensaje o consulta aquí...", "required": true }
+        ],
+        "submit_button": "Enviar mensaje",
+        "database_storage": "POST /api/contacts - Persist to MongoDB database with timestamp"
+      }
+    },
+    "footer": {
+      "brand": "KAWSAY",
+      "tagline": "Iniciativa estudiantil desarrollada mediante el enfoque STEAM + H",
+      "school": "Alumnos del Colegio Emblemático Alfonso Ugarte (San Isidro, Lima, Perú)",
+      "institutional_slots": {
+        "area": "Área de Desarrollo Personal, Ciudadanía y Cívica (DPCC)",
+        "teachers": "Equipo de Docentes Asesores del Proyecto",
+        "socials": "Redes Sociales Institucionales & Proyecto",
+        "note": "Espacio reservado para información institucional y créditos pedagógicos."
+      }
+    }
+  },
+  "interactive_modal": {
+    "trigger": "Botón 'Me interesa' en cada tarjeta del catálogo",
+    "behavior": "Abre un modal emergente minimalista prefijado con el diseño seleccionado, permitiendo al usuario enviar sus datos directamente o contactar por WhatsApp."
+  },
+  "database_and_backend": {
+    "endpoint": "http://localhost:8000/api/contacts",
+    "method": "POST",
+    "payload": {
+      "nombre": "string",
+      "medio_contacto": "string",
+      "motivo": "string",
+      "mensaje": "string",
+      "diseno_interes": "optional string"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Ensure all navigation links execute smooth scroll to sections (id='inicio', id='nosotros', id='galeria', id='catalogo', id='contactanos').",
+    "Use data-testid attributes on all interactive elements (data-testid='nav-inicio', data-testid='catalog-item-1', data-testid='contact-submit-button', data-testid='interest-modal-button', etc.).",
+    "Maintain high text contrast ratios (dark forest green text #2D3B2D / dark earth #5A4E46 on light warm ivory #FAF7F2 or white #FFFFFF cards).",
+    "Preserve the raw Kawsay logo asset from public/ assets without modifying or re-generating graphic shapes.",
+    "Implement Sonner toast notification on contact form submission success.",
+    "Ensure total responsiveness with grid-cols-1 on mobile, grid-cols-2 on tablet, and grid-cols-3 or grid-cols-4 on desktop for catalog and gallery."
+  ]
+}

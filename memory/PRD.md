@@ -1,0 +1,44 @@
+# PRD — KAWSAY · Página informativa del proyecto estudiantil
+
+## Declaración del problema (original)
+Desarrollar una página web informativa para el proyecto estudiantil KAWSAY (Alumnos del Alfonso Ugarte, enfoque STEAM + H), primera versión de prueba: estructura sólida, identidad visual coherente y experiencia atractiva, sin inventar información institucional, contactos, precios futuros, nombres de profesores ni nombres definitivos de diseños.
+
+## Arquitectura
+- Frontend: React (CRA + craco) + Tailwind + framer-motion + Lenis (scroll con momentum) + sonner (toasts). Landing de una página, secciones con scroll suave.
+- Backend: FastAPI + Motor (MongoDB). Endpoint `POST /api/contact` y `GET /api/contact` (mensajes guardados en colección `contact_messages`, con modelo BaseDocument/PyObjectId).
+- Logos originales del usuario en `frontend/public/` (kawsay-logo.png con fondo vuelto transparente sin alterar sus colores/composición; au-logo.png intacto). Favicon SVG propio (marca de brote, solo favicon).
+
+## Identidad visual
+- Paleta derivada del logo: verdes (forest #33422C, pine #3E5233, leaf #5C7043, olive #6E7F45, moss), marrón tierra #7A5138, crema/marfil #F7F3EA/#EFE8D8, blanco complementario.
+- Tipografías: Fredoka (títulos, redondeada/orgánica, afín al lettering del logo) + Nunito Sans (cuerpo legible).
+- Textura de trama tejida (tocuyo) en marcadores de imagen, grano sutil global, formas orgánicas, marquee editorial, reveals con framer-motion, parallax en hero.
+
+## Personas
+- Estudiante del Ugarte: conoce el proyecto y comparte la página.
+- Comprador potencial (familia/comunidad): ve el catálogo y envía interés vía formulario.
+- Docente/asesor: revisa mensajes guardados en la base de datos.
+
+## Requisitos core (estáticos)
+1. Navbar fija con logo KAWSAY, menú (Inicio/Nosotros/Galería/Catálogo/Contáctanos), hamburguesa móvil, scroll suave con sección activa.
+2. Hero: KAWSAY + frase + dos párrafos textuales del brief + CTA "Conoce nuestro proyecto" + contenedor reservado para imagen principal.
+3. Nosotros: 4 bloques textuales del brief + chips de las 6 disciplinas + tarjetas especiales PERÚ (rojo nacional) y ALFONSO UGARTE (guinda/amarillo + logo AU), con "información próximamente".
+4. Galería: 4 bloques (Trabajo colaborativo, Creación y diseño, Elaboración, Participación estudiantil) con marcos de imagen reemplazables + espacio para descripción.
+5. Catálogo: 12 tarjetas (Diseño 01–12, nombre/descripción por definir, precio provisional S/ 10.00, botón "Me interesa" que precarga el interés en el formulario).
+6. Contáctanos: 3 canales placeholder (profesora, WhatsApp, Instagram) + formulario (Nombre, Medio de contacto, Motivo, Mensaje) que guarda en MongoDB con toast de confirmación.
+7. Footer: KAWSAY, tagline, "Alumnos del Alfonso Ugarte", espacios reservados (DPCC, docentes, redes, información institucional).
+
+## Implementado (2026-10-01)
+- Landing completa (todas las secciones), animaciones sutiles (reveals, marquee, hover, parallax hero, reveal enmascarado línea por línea).
+- Formulario con guardado real en MongoDB (`POST /api/contact`) verificado con curl y desde la UI.
+- Responsive 1440/390 verificado con capturas; sin desbordamiento horizontal.
+
+## Backlog priorizado
+- P0: Reemplazar marcadores por fotos reales (hero, galería, catálogo) — solo cambiar `src` o los labels.
+- P1: Cargar datos reales en tarjetas PERÚ / ALFONSO UGARTE y canales de contacto (número profesora, WhatsApp, Instagram).
+- P1: Nombres/descripciones definitivos de los 12 diseños y ajuste del precio si cambia.
+- P2: Panel simple para docentes que lea `GET /api/contact`; admin de productos.
+
+## Próximas tareas
+1. Sustituir marcadores de imagen por fotografías definitivas.
+2. Incorporar datos reales de contacto y de tarjetas especiales.
+3. Definir nombres/descripciones de los 12 diseños.
