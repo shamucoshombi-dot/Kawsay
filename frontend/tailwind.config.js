@@ -115,7 +115,7 @@ module.exports = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        marquee: 'marquee 38s linear infinite',
+        marquee: 'marquee 50s linear infinite',
         float: 'float 7s ease-in-out infinite',
         'float-slow': 'float 11s ease-in-out infinite',
         sway: 'sway 9s ease-in-out infinite'

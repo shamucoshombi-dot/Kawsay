@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FlaskConical, HeartHandshake, Leaf, Package } from "lucide-react";
 import { Reveal, SectionTag } from "./Reveal";
+import PlaceholderImage from "./PlaceholderImage";
 
 const DISCIPLINAS = [
     { letra: "S", nombre: "Ciencia" },
@@ -94,75 +95,111 @@ export default function Nosotros() {
                     </Card>
                 </div>
 
-                <div className="mt-14 grid gap-6 md:grid-cols-2">
-                    <Reveal delay={0.05}>
-                        <div
-                            data-testid="card-peru"
-                            style={{
-                                backgroundImage:
-                                    "linear-gradient(90deg, rgba(196,59,47,0.09) 0%, rgba(196,59,47,0.09) 17%, rgba(196,59,47,0.015) 17%, rgba(196,59,47,0.015) 83%, rgba(196,59,47,0.09) 83%)",
-                            }}
-                            className="group h-full rounded-[2rem] border-2 border-kawsay-peru/30 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-kawsay-peru/50 hover:shadow-soft"
-                        >
-                            <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-kawsay-peru/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-kawsay-peru">
-                                <span className="h-2 w-2 rounded-full bg-kawsay-peru" />
-                                Edición especial
-                            </span>
-                            <div className="flex items-center gap-3">
-                                <h3 className="font-display text-2xl font-semibold text-kawsay-peru sm:text-3xl">
+                <div className="mt-14 space-y-6">
+                    <div className="grid gap-6 md:grid-cols-2">
+                        <Reveal delay={0.05}>
+                            <div
+                                data-testid="card-peru"
+                                style={{
+                                    backgroundImage:
+                                        "linear-gradient(90deg, rgba(196,59,47,0.09) 0%, rgba(196,59,47,0.09) 17%, rgba(196,59,47,0.015) 17%, rgba(196,59,47,0.015) 83%, rgba(196,59,47,0.09) 83%)",
+                                }}
+                                className="group h-full rounded-[1.75rem] border-2 border-kawsay-peru/30 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-kawsay-peru/50 hover:shadow-soft sm:p-7"
+                            >
+                                <div className="flex items-center justify-between gap-3">
+                                    <span className="inline-flex items-center gap-2 rounded-full bg-kawsay-peru/10 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-kawsay-peru">
+                                        <span className="h-1.5 w-1.5 rounded-full bg-kawsay-peru" />
+                                        Edición especial
+                                    </span>
+                                    <span
+                                        aria-hidden
+                                        className="inline-flex h-4 w-7 shrink-0 overflow-hidden rounded-sm border border-kawsay-peru/25"
+                                    >
+                                        <span className="w-[30%] bg-kawsay-peru/80" />
+                                        <span className="w-[40%] bg-white" />
+                                        <span className="w-[30%] bg-kawsay-peru/80" />
+                                    </span>
+                                </div>
+                                <h3 className="mt-4 font-display text-xl font-semibold text-kawsay-peru sm:text-2xl">
                                     PERÚ
                                 </h3>
-                                <span
-                                    aria-hidden
-                                    className="inline-flex h-4 w-7 shrink-0 overflow-hidden rounded-sm border border-kawsay-peru/25"
-                                >
-                                    <span className="w-[30%] bg-kawsay-peru/80" />
-                                    <span className="w-[40%] bg-white" />
-                                    <span className="w-[30%] bg-kawsay-peru/80" />
-                                </span>
+                                <p className="mt-2 max-w-md text-[15px] leading-relaxed text-kawsay-bark">
+                                    Tarjeta preparada con una paleta inspirada en los
+                                    colores nacionales. La información específica se
+                                    agregará próximamente.
+                                </p>
                             </div>
-                            <p className="mt-3 text-[15px] leading-relaxed text-kawsay-bark">
-                                Tarjeta preparada con una paleta inspirada en los colores
-                                nacionales. La información específica se agregará
-                                próximamente.
-                            </p>
-                        </div>
-                    </Reveal>
-                    <Reveal delay={0.12}>
+                        </Reveal>
+                        <Reveal delay={0.12}>
+                            <div
+                                data-testid="card-alfonso-ugarte"
+                                style={{
+                                    backgroundImage:
+                                        "radial-gradient(circle at 12% 18%, rgba(232,184,0,0.12), transparent 42%), radial-gradient(circle at 88% 88%, rgba(123,18,48,0.10), transparent 48%)",
+                                }}
+                                className="group h-full rounded-[1.75rem] border-2 border-kawsay-guinda/30 bg-white p-6 ring-1 ring-kawsay-gold/60 transition-all duration-300 hover:-translate-y-1 hover:border-kawsay-guinda/50 hover:shadow-soft sm:p-7"
+                            >
+                                <div className="flex items-center justify-between gap-3">
+                                    <span className="inline-flex items-center rounded-full bg-kawsay-guinda px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
+                                        Edición institucional
+                                    </span>
+                                    <img
+                                        src="/au-logo.png"
+                                        alt="Logo de la escuela emblemática Alfonso Ugarte"
+                                        className="h-11 w-11 shrink-0 object-contain"
+                                    />
+                                </div>
+                                <div className="mt-4 flex items-center gap-3">
+                                    <h3 className="font-display text-xl font-semibold text-kawsay-guinda sm:text-2xl">
+                                        ALFONSO UGARTE
+                                    </h3>
+                                    <span
+                                        aria-hidden
+                                        className="inline-flex h-4 w-7 shrink-0 overflow-hidden rounded-sm border border-kawsay-guinda/25"
+                                    >
+                                        <span className="w-1/2 bg-kawsay-guinda/80" />
+                                        <span className="w-1/2 bg-kawsay-gold/80" />
+                                    </span>
+                                </div>
+                                <p className="mt-2 max-w-md text-[15px] leading-relaxed text-kawsay-bark">
+                                    Tarjeta con los colores institucionales guinda y
+                                    amarillo. La información específica se agregará
+                                    próximamente.
+                                </p>
+                            </div>
+                        </Reveal>
+                    </div>
+
+                    <Reveal delay={0.15}>
                         <div
-                            data-testid="card-alfonso-ugarte"
-                            style={{
-                                backgroundImage:
-                                    "radial-gradient(circle at 12% 18%, rgba(232,184,0,0.12), transparent 42%), radial-gradient(circle at 88% 88%, rgba(123,18,48,0.10), transparent 48%)",
-                            }}
-                            className="group h-full rounded-[2rem] border-2 border-kawsay-guinda/30 bg-white p-8 ring-2 ring-kawsay-gold/50 transition-all duration-300 hover:-translate-y-1 hover:border-kawsay-guinda/50 hover:shadow-soft"
+                            data-testid="card-profesora"
+                            className="relative mx-auto flex max-w-2xl flex-col items-center gap-6 overflow-hidden rounded-[1.75rem] border border-kawsay-brown/25 bg-white p-6 text-center shadow-soft sm:flex-row sm:p-7 sm:text-left"
                         >
-                            <div className="mb-5 flex flex-wrap items-center gap-4">
-                                <img
-                                    src="/au-logo.png"
-                                    alt="Logo de la escuela emblemática Alfonso Ugarte"
-                                    className="h-14 w-14 object-contain"
-                                />
-                                <span className="inline-flex items-center rounded-full bg-kawsay-guinda px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-white">
-                                    Edición institucional
+                            <PlaceholderImage
+                                label="Fotografía de la docente"
+                                sub="Por agregar"
+                                aspect="aspect-square"
+                                rounded="rounded-[1.5rem]"
+                                className="w-36 shrink-0 sm:w-40"
+                                testid="profesora-photo-placeholder"
+                            />
+                            <div>
+                                <span className="inline-flex items-center gap-2 rounded-full bg-kawsay-brown/10 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-kawsay-brown">
+                                    <Leaf className="h-3 w-3" />
+                                    Reconocimiento
                                 </span>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <h3 className="font-display text-2xl font-semibold text-kawsay-guinda sm:text-3xl">
-                                    ALFONSO UGARTE
+                                <h3 className="mt-3 font-display text-xl font-semibold text-kawsay-brown sm:text-2xl">
+                                    Profesora que inspira
                                 </h3>
-                                <span
-                                    aria-hidden
-                                    className="inline-flex h-4 w-7 shrink-0 overflow-hidden rounded-sm border border-kawsay-guinda/25"
-                                >
-                                    <span className="w-1/2 bg-kawsay-guinda/80" />
-                                    <span className="w-1/2 bg-kawsay-gold/80" />
-                                </span>
+                                <p className="mt-1 font-display text-base font-semibold text-kawsay-forest">
+                                    Mirian Patricia Vega Cruz
+                                </p>
+                                <p className="mt-2 text-[15px] leading-relaxed text-kawsay-bark">
+                                    Docente que acompaña y orienta el desarrollo de esta
+                                    iniciativa, impulsando la participación, creatividad
+                                    y aprendizaje de los estudiantes.
+                                </p>
                             </div>
-                            <p className="mt-3 text-[15px] leading-relaxed text-kawsay-bark">
-                                Tarjeta con los colores institucionales guinda y amarillo.
-                                La información específica se agregará próximamente.
-                            </p>
                         </div>
                     </Reveal>
                 </div>

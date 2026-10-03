@@ -1,10 +1,9 @@
-import { HandHeart } from "lucide-react";
 import { Reveal, SectionTag } from "./Reveal";
 import PlaceholderImage from "./PlaceholderImage";
 
 const DISENOS = Array.from({ length: 12 }, (_, i) => String(i + 1).padStart(2, "0"));
 
-export default function Catalogo({ onInterest }) {
+export default function Catalogo() {
     return (
         <section id="catalogo" className="scroll-mt-20 bg-kawsay-sage/70 py-20 sm:py-28">
             <div className="mx-auto max-w-6xl px-5 sm:px-8">
@@ -63,7 +62,7 @@ export default function Catalogo({ onInterest }) {
                                     Nombre del diseño, su significado y breve descripción
                                     por definir.
                                 </p>
-                                <div className="mt-4 flex items-center justify-between px-1">
+                                <div className="mt-4 flex items-center justify-between border-t border-kawsay-line/70 px-1 pt-3">
                                     <span className="font-display text-base font-semibold text-kawsay-brown">
                                         S/ 10.00
                                     </span>
@@ -71,14 +70,6 @@ export default function Catalogo({ onInterest }) {
                                         provisional
                                     </span>
                                 </div>
-                                <button
-                                    data-testid={`catalog-interest-${i + 1}`}
-                                    onClick={() => onInterest(`Diseño ${n}`)}
-                                    className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-kawsay-ivory px-4 py-2.5 font-display text-sm font-semibold text-kawsay-forest ring-1 ring-inset ring-kawsay-line transition-all duration-300 hover:bg-kawsay-olive hover:text-kawsay-ivory hover:ring-kawsay-olive"
-                                >
-                                    <HandHeart className="h-4 w-4" />
-                                    Me interesa
-                                </button>
                             </article>
                         </Reveal>
                     ))}

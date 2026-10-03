@@ -1,25 +1,51 @@
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
-import { Instagram, MessageCircle, Phone, Send, X } from "lucide-react";
+import {
+    ArrowUpRight,
+    Instagram,
+    Leaf,
+    MessageCircle,
+    Phone,
+    Send,
+} from "lucide-react";
 import { Reveal, SectionTag } from "./Reveal";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
+const NUMERO = "+51 993 929 294";
+
 const CANALES = [
-    { icon: Phone, titulo: "Número de la profesora", valor: "Por compartir próximamente", testid: "contact-channel-teacher" },
-    { icon: MessageCircle, titulo: "WhatsApp del proyecto", valor: "Por compartir próximamente", testid: "contact-channel-whatsapp" },
-    { icon: Instagram, titulo: "Instagram del proyecto", valor: "Por compartir próximamente", testid: "contact-channel-instagram" },
+    {
+        icon: Phone,
+        titulo: "Contacto del proyecto",
+        valor: NUMERO,
+        testid: "contact-channel-proyecto",
+    },
+    {
+        icon: MessageCircle,
+        titulo: "WhatsApp",
+        valor: NUMERO,
+        link: "https://wa.me/51993929294",
+        linkLabel: "Abrir WhatsApp",
+        testid: "contact-channel-whatsapp",
+    },
+    {
+        icon: Instagram,
+        titulo: "Instagram del proyecto",
+        valor: "Por compartir próximamente",
+        testid: "contact-channel-instagram",
+    },
 ];
 
-const MOTIVOS = ["Comprar productos", "Colaborar con la iniciativa", "Sugerir ideas"];
+const MOTIVOS = ["Sugerir una idea", "Dejar un comentario", "Realizar una consulta"];
 
 const EMPTY = { nombre: "", medio_contacto: "", motivo: "", mensaje: "" };
 
 const inputCls =
     "w-full rounded-2xl border border-kawsay-line bg-kawsay-ivory/60 px-4 py-3 text-[15px] font-semibold text-kawsay-ink placeholder:font-normal placeholder:text-kawsay-bark/50 outline-none transition-all duration-200 focus:border-kawsay-olive focus:ring-4 focus:ring-kawsay-olive/15";
 
-export default function Contacto({ interes, onClearInteres }) {
+export default function Contacto() {
     const [form, setForm] = useState(EMPTY);
     const [sending, setSending] = useState(false);
 
@@ -30,12 +56,11 @@ export default function Contacto({ interes, onClearInteres }) {
         if (sending) return;
         setSending(true);
         try {
-            await axios.post(`${API}/contact`, { ...form, diseno_interes: interes || null });
+            await axios.post(`${API}/contact`, { ...form });
             toast.success("¡Mensaje enviado! Gracias por escribirnos.", {
                 description: "El equipo de Kawsay lo revisará pronto.",
             });
             setForm(EMPTY);
-            onClearInteres?.();
         } catch {
             toast.error("No se pudo enviar el mensaje. Inténtalo nuevamente.");
         } finally {
@@ -44,8 +69,16 @@ export default function Contacto({ interes, onClearInteres }) {
     };
 
     return (
-        <section id="contactanos" className="scroll-mt-20 py-20 sm:py-28">
-            <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <section
+            id="contactanos"
+            className="relative scroll-mt-20 overflow-hidden py-20 sm:py-28"
+        >
+            <div aria-hidden className="pointer-events-none absolute inset-0">
+                <div className="absolute -right-24 top-16 h-64 w-64 rounded-full bg-kawsay-sage/70 blur-2xl" />
+                <Leaf className="absolute left-[5%] top-24 h-9 w-9 -rotate-12 text-kawsay-moss/40" />
+                <Leaf className="absolute bottom-16 right-[6%] h-12 w-12 rotate-12 text-kawsay-leaf/25" />
+            </div>
+            <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
                 <Reveal>
                     <SectionTag>Contáctanos</SectionTag>
                 </Reveal>
@@ -56,9 +89,8 @@ export default function Contacto({ interes, onClearInteres }) {
                 </Reveal>
                 <Reveal delay={0.14}>
                     <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-kawsay-bark">
-                        Escríbenos para comprar productos, colaborar con la iniciativa o
-                        sugerir ideas. Los datos de contacto se incorporarán
-                        próximamente.
+                        Escríbenos para realizar consultas, dejar comentarios, sugerir
+                        ideas o comunicarte con el proyecto y la docente que lo acompaña.
                     </p>
                 </Reveal>
 
@@ -73,13 +105,25 @@ export default function Contacto({ interes, onClearInteres }) {
                                     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-kawsay-leaf/10 text-kawsay-leaf">
                                         <c.icon className="h-5 w-5" />
                                     </span>
-                                    <div>
+                                    <div className="min-w-0 flex-1">
                                         <p className="font-display text-base font-semibold text-kawsay-forest">
                                             {c.titulo}
                                         </p>
                                         <p className="text-sm font-semibold text-kawsay-bark/60">
                                             {c.valor}
                                         </p>
+                                        {c.link && (
+                                            <a
+                                                href={c.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                data-testid="whatsapp-link-button"
+                                                className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-kawsay-olive/10 px-3.5 py-1.5 text-xs font-bold text-kawsay-olive transition-colors duration-300 hover:bg-kawsay-olive hover:text-kawsay-ivory"
+                                            >
+                                                {c.linkLabel}
+                                                <ArrowUpRight className="h-3.5 w-3.5" />
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
                             </Reveal>
@@ -87,9 +131,7 @@ export default function Contacto({ interes, onClearInteres }) {
                         <Reveal delay={0.25}>
                             <div className="rounded-[1.75rem] border border-dashed border-kawsay-line bg-kawsay-ivory/70 p-5">
                                 <p className="text-sm leading-relaxed text-kawsay-bark/70">
-                                    Los números y enlaces reales aún no han sido
-                                    proporcionados. Este espacio está preparado para
-                                    sustituirlos fácilmente.
+                                    El Instagram del proyecto se agregará próximamente.
                                 </p>
                             </div>
                         </Reveal>
@@ -101,23 +143,6 @@ export default function Contacto({ interes, onClearInteres }) {
                             onSubmit={submit}
                             className="rounded-[2rem] border border-kawsay-line bg-white p-6 shadow-soft sm:p-8"
                         >
-                            {interes && (
-                                <div
-                                    data-testid="contact-interest-chip"
-                                    className="mb-5 inline-flex items-center gap-2 rounded-full bg-kawsay-olive/10 px-4 py-2 text-sm font-bold text-kawsay-olive"
-                                >
-                                    Interés: {interes}
-                                    <button
-                                        type="button"
-                                        data-testid="contact-interest-clear"
-                                        onClick={onClearInteres}
-                                        aria-label="Quitar interés"
-                                        className="rounded-full p-0.5 transition-colors hover:bg-kawsay-olive/20"
-                                    >
-                                        <X className="h-3.5 w-3.5" />
-                                    </button>
-                                </div>
-                            )}
                             <div className="grid gap-5 sm:grid-cols-2">
                                 <div>
                                     <label htmlFor="c-nombre" className="mb-2 block text-sm font-bold text-kawsay-forest">
@@ -149,7 +174,7 @@ export default function Contacto({ interes, onClearInteres }) {
                                 </div>
                                 <div className="sm:col-span-2">
                                     <label htmlFor="c-motivo" className="mb-2 block text-sm font-bold text-kawsay-forest">
-                                        Motivo de contacto
+                                        Motivo del contacto
                                     </label>
                                     <select
                                         id="c-motivo"

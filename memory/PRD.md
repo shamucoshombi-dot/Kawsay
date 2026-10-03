@@ -27,6 +27,12 @@ Desarrollar una página web informativa para el proyecto estudiantil KAWSAY (Alu
 6. Contáctanos: 3 canales placeholder (profesora, WhatsApp, Instagram) + formulario (Nombre, Medio de contacto, Motivo, Mensaje) que guarda en MongoDB con toast de confirmación.
 7. Footer: KAWSAY, tagline, "Alumnos del Alfonso Ugarte", espacios reservados (DPCC, docentes, redes, información institucional).
 
+## Implementado (2026-10-03 — etapa 2)
+- Enfoque informativo: se eliminó todo lenguaje de compra; el catálogo es presentación informativa (imagen, nombre, descripción, precio S/ 10.00 provisional) sin botones de compra ni "Me interesa".
+- Contacto con propósito de consultas/comentarios/ideas: tarjeta "Contacto del proyecto" +51 993 929 294, tarjeta "WhatsApp" con botón wa.me/51993929294, Instagram conservado como placeholder; formulario con motivos exactos: Sugerir una idea / Dejar un comentario / Realizar una consulta.
+- Tarjetas especiales compactas: PERÚ (franjas bandera sutiles + chip) y ALFONSO UGARTE (escudo AU + aro dorado + chip guinda/amarillo); debajo, tarjeta "Profesora que inspira" — Mirian Patricia Vega Cruz — con contenedor de foto preparado (sin foto ficticia).
+- Marquee más fino y lento (50s), hojas y blobs sutiles en Contacto y Galería; sin desbordamiento horizontal (1440/390 verificado).
+
 ## Implementado (2026-10-01)
 - Landing completa (todas las secciones), animaciones sutiles (reveals, marquee, hover, parallax hero, reveal enmascarado línea por línea).
 - Formulario con guardado real en MongoDB (`POST /api/contact`) verificado con curl y desde la UI.

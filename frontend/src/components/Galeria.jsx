@@ -1,3 +1,4 @@
+import { Leaf } from "lucide-react";
 import { Reveal, SectionTag } from "./Reveal";
 import PlaceholderImage from "./PlaceholderImage";
 
@@ -10,7 +11,14 @@ const BLOQUES = [
 
 export default function Galeria() {
     return (
-        <section id="galeria" className="scroll-mt-20 py-20 sm:py-28">
+        <section
+            id="galeria"
+            className="relative scroll-mt-20 overflow-hidden py-20 sm:py-28"
+        >
+            <div aria-hidden className="pointer-events-none absolute inset-0">
+                <div className="absolute -left-28 top-24 h-64 w-64 rounded-full bg-kawsay-sand/50 blur-2xl" />
+                <Leaf className="absolute right-[7%] top-28 h-9 w-9 rotate-12 text-kawsay-moss/40" />
+            </div>
             <div className="mx-auto max-w-6xl px-5 sm:px-8">
                 <Reveal>
                     <SectionTag>Galería</SectionTag>

@@ -1,4 +1,4 @@
-import { Component, useEffect, useState } from "react";
+import { Component, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Lenis from "lenis";
 import { Toaster } from "sonner";
@@ -41,8 +41,6 @@ class ErrorBoundary extends Component {
 }
 
 function Page() {
-    const [interes, setInteres] = useState(null);
-
     useEffect(() => {
         const lenis = new Lenis({ duration: 1.15, smoothWheel: true });
         window.__lenis = lenis;
@@ -67,11 +65,8 @@ function Page() {
                 <Marquee />
                 <Nosotros />
                 <Galeria />
-                <Catalogo onInterest={(d) => setInteres(d)} />
-                <Contacto
-                    interes={interes}
-                    onClearInteres={() => setInteres(null)}
-                />
+                <Catalogo />
+                <Contacto />
             </main>
             <Footer />
             <Toaster position="bottom-right" richColors closeButton />
