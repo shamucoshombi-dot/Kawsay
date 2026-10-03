@@ -17,7 +17,7 @@ export const Reveal = ({ children, delay = 0, y = 28, className = "", ...rest })
 );
 
 export const SectionTag = ({ children }) => (
-    <span className="inline-flex items-center gap-2 rounded-full border border-kawsay-line bg-white/70 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-kawsay-leaf">
+    <span className="inline-flex items-center gap-2 rounded-full border border-kawsay-line bg-white/70 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-kawsay-leaf dark:border-kawsay-nightLine dark:bg-kawsay-nightCard/80 dark:text-kawsay-moss">
         <Sprout className="h-3.5 w-3.5" />
         {children}
     </span>

@@ -13,11 +13,11 @@ export default function Galeria() {
     return (
         <section
             id="galeria"
-            className="relative scroll-mt-20 overflow-hidden bg-kawsay-creamWarm/60 py-20 sm:py-28"
+            className="relative scroll-mt-20 overflow-hidden bg-kawsay-creamWarm/60 py-20 transition-colors duration-300 dark:bg-[#282F1E] sm:py-28"
         >
             <div aria-hidden className="pointer-events-none absolute inset-0">
-                <div className="absolute -left-28 top-24 h-64 w-64 rounded-full bg-kawsay-sand/50 blur-2xl" />
-                <Leaf className="absolute right-[7%] top-28 h-9 w-9 rotate-12 text-kawsay-moss/40" />
+                <div className="absolute -left-28 top-24 h-64 w-64 rounded-full bg-kawsay-sand/50 blur-2xl dark:opacity-25" />
+                <Leaf className="absolute right-[7%] top-28 h-9 w-9 rotate-12 text-kawsay-moss/40 dark:text-kawsay-moss/30" />
             </div>
             <div className="mx-auto max-w-6xl px-5 sm:px-8">
                 <Reveal>
@@ -25,12 +25,12 @@ export default function Galeria() {
                 </Reveal>
                 <div className="mt-5 flex flex-wrap items-end justify-between gap-6">
                     <Reveal delay={0.08}>
-                        <h2 className="max-w-xl font-display text-3xl font-semibold leading-tight text-kawsay-forest sm:text-4xl lg:text-5xl">
+                        <h2 className="max-w-xl font-display text-3xl font-semibold leading-tight text-kawsay-forest dark:text-kawsay-nightText sm:text-4xl lg:text-5xl">
                             El proceso, paso a paso
                         </h2>
                     </Reveal>
                     <Reveal delay={0.15}>
-                        <p className="max-w-sm text-[15px] leading-relaxed text-kawsay-bark">
+                        <p className="max-w-sm text-[15px] leading-relaxed text-kawsay-bark dark:text-kawsay-nightMuted">
                             Los espacios están preparados para mostrar las fotografías del
                             proyecto junto con una breve descripción de cada etapa.
                         </p>
@@ -50,14 +50,14 @@ export default function Galeria() {
                             >
                                 <Reveal className="md:w-[42%]">
                                     <div>
-                                        <span className="font-display text-5xl font-semibold text-kawsay-olive/60 sm:text-6xl">
+                                        <span className="font-display text-5xl font-semibold text-kawsay-olive/60 dark:text-kawsay-moss/50 sm:text-6xl">
                                             {b.num}
                                         </span>
-                                        <h3 className="mt-3 font-display text-2xl font-semibold text-kawsay-forest sm:text-3xl">
+                                        <h3 className="mt-3 font-display text-2xl font-semibold text-kawsay-forest dark:text-kawsay-nightText sm:text-3xl">
                                             {b.title}
                                         </h3>
-                                        <div className="mt-4 rounded-2xl border border-dashed border-kawsay-olive/40 bg-kawsay-sage/30 p-4">
-                                            <p className="text-sm font-semibold text-kawsay-bark/70">
+                                        <div className="mt-4 rounded-2xl border border-dashed border-kawsay-olive/40 bg-kawsay-sage/30 p-4 dark:border-kawsay-nightLine dark:bg-kawsay-nightCard/70">
+                                            <p className="text-sm font-semibold text-kawsay-bark/70 dark:text-kawsay-nightMuted">
                                                 Breve descripción de esta etapa — se
                                                 agregará próximamente.
                                             </p>

@@ -15,16 +15,16 @@ const lineReveal = {
 const Chip = ({ testid }) => (
     <div
         data-testid={testid}
-        className="flex items-center gap-3 rounded-2xl border border-kawsay-olive/30 bg-kawsay-ivory/95 px-5 py-3.5 shadow-lift backdrop-blur-sm"
+        className="flex items-center gap-3 rounded-2xl border border-kawsay-olive/30 bg-kawsay-ivory/95 px-5 py-3.5 shadow-lift backdrop-blur-sm dark:border-kawsay-nightLine dark:bg-kawsay-nightCard/95"
     >
         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-kawsay-ocre/15 text-kawsay-ocre">
             <Sprout className="h-4 w-4" />
         </span>
         <div>
-            <p className="font-display text-sm font-semibold text-kawsay-forest">
+            <p className="font-display text-sm font-semibold text-kawsay-forest dark:text-kawsay-nightText">
                 Bolsas de tocuyo reutilizables
             </p>
-            <p className="text-xs font-semibold text-kawsay-bark/70">
+            <p className="text-xs font-semibold text-kawsay-bark/70 dark:text-kawsay-nightMuted">
                 Diseños inspirados en nuestra identidad peruana.
             </p>
         </div>
@@ -51,11 +51,11 @@ export default function Hero() {
                 aria-hidden
                 className="pointer-events-none absolute inset-0"
             >
-                <div className="absolute -left-24 top-24 h-64 w-64 rounded-full bg-kawsay-sand/50 blur-2xl" />
+                <div className="absolute -left-24 top-24 h-64 w-64 rounded-full bg-kawsay-sand/50 blur-2xl dark:opacity-30" />
                 <Leaf className="absolute left-[4%] top-[18%] h-9 w-9 -rotate-12 text-kawsay-moss/45" />
                 <span className="absolute left-[38%] top-[12%] h-2.5 w-2.5 rounded-full bg-kawsay-ocre/40" />
                 <svg
-                    className="absolute bottom-[8%] left-[26%] h-14 w-40 text-kawsay-olive/30"
+                    className="absolute bottom-[8%] left-[26%] h-14 w-40 text-kawsay-olive/30 dark:text-kawsay-moss/25"
                     viewBox="0 0 176 64"
                     fill="none"
                 >
@@ -75,14 +75,14 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, ease: EASE }}
-                        className="mb-7 inline-flex items-center gap-2 rounded-full border border-kawsay-olive/35 bg-kawsay-sage/50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-kawsay-pine"
+                        className="mb-7 inline-flex items-center gap-2 rounded-full border border-kawsay-olive/35 bg-kawsay-sage/50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-kawsay-pine dark:border-kawsay-nightLine dark:bg-kawsay-nightCard dark:text-kawsay-moss"
                     >
                         <Sprout className="h-3.5 w-3.5" />
                         Proyecto estudiantil · STEAM + H
                         <span className="h-1.5 w-1.5 rounded-full bg-kawsay-ocre" />
                     </motion.div>
 
-                    <h1 className="font-display text-6xl font-semibold leading-none text-kawsay-forest sm:text-7xl lg:text-7xl xl:text-8xl">
+                    <h1 className="font-display text-6xl font-semibold leading-none text-kawsay-forest dark:text-kawsay-nightText sm:text-7xl lg:text-7xl xl:text-8xl">
                         <span className="block overflow-hidden pb-1">
                             <motion.span
                                 variants={lineReveal}
@@ -96,7 +96,7 @@ export default function Hero() {
                         </span>
                     </h1>
 
-                    <p className="mt-4 font-display text-2xl font-medium leading-snug text-kawsay-leaf sm:text-3xl lg:text-4xl">
+                    <p className="mt-4 font-display text-2xl font-medium leading-snug text-kawsay-leaf dark:text-kawsay-moss sm:text-3xl lg:text-4xl">
                         <span className="block overflow-hidden pb-1">
                             <motion.span variants={lineReveal} initial="hidden" animate="show" custom={1} className="block">
                                 Creando, aprendiendo
@@ -113,7 +113,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.55, ease: EASE }}
-                        className="mt-7 max-w-md space-y-4 text-base leading-relaxed text-kawsay-bark sm:text-lg"
+                        className="mt-7 max-w-md space-y-4 text-base leading-relaxed text-kawsay-bark dark:text-kawsay-nightMuted sm:text-lg"
                     >
                         <p>
                             Kawsay es una iniciativa desarrollada por alumnos del Alfonso
@@ -138,7 +138,7 @@ export default function Hero() {
                         <button
                             data-testid="hero-cta-button"
                             onClick={() => scrollToId("nosotros")}
-                            className="group inline-flex items-center gap-2 rounded-full bg-kawsay-pine px-7 py-3.5 font-display text-base font-semibold text-kawsay-ivory shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-kawsay-forest hover:shadow-lift"
+                            className="group inline-flex items-center gap-2 rounded-full bg-kawsay-pine px-7 py-3.5 font-display text-base font-semibold text-kawsay-ivory shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-kawsay-forest hover:shadow-lift dark:bg-kawsay-olive dark:hover:bg-kawsay-leaf"
                         >
                             Conoce nuestro proyecto
                             <ArrowDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
@@ -146,7 +146,7 @@ export default function Hero() {
                         <button
                             data-testid="hero-secondary-link"
                             onClick={() => scrollToId("catalogo")}
-                            className="inline-flex items-center gap-2 rounded-full border-2 border-kawsay-olive/50 bg-kawsay-ivory px-6 py-3 font-display text-base font-semibold text-kawsay-pine transition-all duration-300 hover:-translate-y-0.5 hover:border-kawsay-olive hover:bg-kawsay-sage/40"
+                            className="inline-flex items-center gap-2 rounded-full border-2 border-kawsay-olive/50 bg-kawsay-ivory px-6 py-3 font-display text-base font-semibold text-kawsay-pine transition-all duration-300 hover:-translate-y-0.5 hover:border-kawsay-olive hover:bg-kawsay-sage/40 dark:border-kawsay-moss/60 dark:bg-transparent dark:text-kawsay-nightText dark:hover:bg-kawsay-nightCard/70"
                         >
                             Ver catálogo
                         </button>
@@ -162,7 +162,7 @@ export default function Hero() {
                 >
                     <div
                         data-testid="hero-image-main"
-                        className="organic-frame relative aspect-[4/3] overflow-hidden border-2 border-kawsay-olive/40 shadow-lift lg:aspect-auto lg:h-[520px] xl:h-[560px]"
+                        className="organic-frame relative aspect-[4/3] overflow-hidden border-2 border-kawsay-olive/40 shadow-lift dark:border-kawsay-moss/45 lg:aspect-auto lg:h-[520px] xl:h-[560px]"
                     >
                         <img
                             src="/kawsay-hero.jpg"

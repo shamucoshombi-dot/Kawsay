@@ -38,7 +38,7 @@ function formatDate(iso) {
 }
 
 const inputCls =
-    "w-full rounded-2xl border border-kawsay-line bg-kawsay-ivory/60 px-4 py-3 text-[15px] font-semibold text-kawsay-ink placeholder:font-normal placeholder:text-kawsay-bark/50 outline-none transition-all duration-200 focus:border-kawsay-olive focus:ring-4 focus:ring-kawsay-olive/15";
+    "w-full rounded-2xl border border-kawsay-line bg-kawsay-ivory/60 px-4 py-3 text-[15px] font-semibold text-kawsay-ink placeholder:font-normal placeholder:text-kawsay-bark/50 outline-none transition-all duration-200 focus:border-kawsay-olive focus:ring-4 focus:ring-kawsay-olive/15 dark:border-kawsay-nightLine dark:bg-kawsay-night/70 dark:text-kawsay-nightText dark:placeholder:text-kawsay-nightMuted/60 dark:focus:border-kawsay-moss dark:focus:ring-kawsay-moss/20";
 
 export default function PanelDocente() {
     const [user, setUser] = useState(null); // null = verificando, false = no autenticado, objeto = ok
@@ -113,14 +113,14 @@ export default function PanelDocente() {
     const unread = messages.filter((m) => !m.leido).length;
 
     return (
-        <div className="min-h-screen bg-kawsay-sage/40 font-body text-kawsay-ink">
+        <div className="min-h-screen bg-kawsay-sage/40 font-body text-kawsay-ink transition-colors duration-300 dark:bg-kawsay-night dark:text-kawsay-nightText">
             <Toaster position="bottom-right" richColors closeButton />
-            <header className="border-b border-kawsay-line/70 bg-kawsay-ivory/90 backdrop-blur-md">
+            <header className="border-b border-kawsay-line/70 bg-kawsay-ivory/90 backdrop-blur-md transition-colors duration-300 dark:border-kawsay-nightLine/70 dark:bg-kawsay-night/90">
                 <div className="mx-auto flex h-[72px] max-w-4xl items-center justify-between px-5 sm:px-8">
                     <Link
                         to="/"
                         data-testid="panel-back-link"
-                        className="flex items-center gap-2 font-display text-sm font-semibold text-kawsay-bark transition-colors hover:text-kawsay-forest"
+                        className="flex items-center gap-2 font-display text-sm font-semibold text-kawsay-bark transition-colors hover:text-kawsay-forest dark:text-kawsay-nightMuted dark:hover:text-kawsay-nightText"
                     >
                         <ArrowLeft className="h-4 w-4" />
                         Volver al sitio
@@ -130,7 +130,7 @@ export default function PanelDocente() {
                             <button
                                 data-testid="panel-refresh-button"
                                 onClick={loadMessages}
-                                className="flex h-10 w-10 items-center justify-center rounded-full border border-kawsay-line bg-white/80 text-kawsay-forest transition-colors hover:bg-kawsay-sand/50"
+                                className="flex h-10 w-10 items-center justify-center rounded-full border border-kawsay-line bg-white/80 text-kawsay-forest transition-colors hover:bg-kawsay-sand/50 dark:border-kawsay-nightLine dark:bg-kawsay-nightCard dark:text-kawsay-nightText dark:hover:bg-kawsay-nightSoft"
                                 aria-label="Actualizar mensajes"
                             >
                                 <RefreshCw className="h-4 w-4" />
@@ -138,7 +138,7 @@ export default function PanelDocente() {
                             <button
                                 data-testid="panel-logout-button"
                                 onClick={logout}
-                                className="flex items-center gap-2 rounded-full border border-kawsay-line bg-white/80 px-4 py-2 font-display text-sm font-semibold text-kawsay-forest transition-colors hover:bg-kawsay-sand/50"
+                                className="flex items-center gap-2 rounded-full border border-kawsay-line bg-white/80 px-4 py-2 font-display text-sm font-semibold text-kawsay-forest transition-colors hover:bg-kawsay-sand/50 dark:border-kawsay-nightLine dark:bg-kawsay-nightCard dark:text-kawsay-nightText dark:hover:bg-kawsay-nightSoft"
                             >
                                 <LogOut className="h-4 w-4" />
                                 Salir
@@ -150,7 +150,7 @@ export default function PanelDocente() {
 
             <main className="mx-auto max-w-4xl px-5 py-10 sm:px-8 sm:py-14">
                 {user === null && (
-                    <p className="text-center font-display text-lg text-kawsay-bark">
+                    <p className="text-center font-display text-lg text-kawsay-bark dark:text-kawsay-nightMuted">
                         Verificando sesión...
                     </p>
                 )}
@@ -159,21 +159,21 @@ export default function PanelDocente() {
                     <form
                         data-testid="panel-login-form"
                         onSubmit={login}
-                        className="mx-auto max-w-md rounded-[2rem] border border-kawsay-line bg-white p-7 shadow-soft sm:p-9"
+                        className="mx-auto max-w-md rounded-[2rem] border border-kawsay-line bg-white p-7 shadow-soft transition-colors duration-300 dark:border-kawsay-nightLine dark:bg-kawsay-nightCard sm:p-9"
                     >
-                        <span className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-kawsay-leaf/10 text-kawsay-leaf">
+                        <span className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-kawsay-leaf/10 text-kawsay-leaf dark:bg-kawsay-olive/20 dark:text-kawsay-moss">
                             <Lock className="h-6 w-6" />
                         </span>
-                        <h1 className="text-center font-display text-2xl font-semibold text-kawsay-forest">
+                        <h1 className="text-center font-display text-2xl font-semibold text-kawsay-forest dark:text-kawsay-nightText">
                             Panel docente
                         </h1>
-                        <p className="mt-2 text-center text-sm leading-relaxed text-kawsay-bark/80">
+                        <p className="mt-2 text-center text-sm leading-relaxed text-kawsay-bark/80 dark:text-kawsay-nightMuted">
                             Ingresa con las credenciales de docente para ver los mensajes
                             recibidos desde la página.
                         </p>
                         <div className="mt-6 space-y-4">
                             <div>
-                                <label htmlFor="p-email" className="mb-2 block text-sm font-bold text-kawsay-forest">
+                                <label htmlFor="p-email" className="mb-2 block text-sm font-bold text-kawsay-forest dark:text-kawsay-nightText">
                                     Correo
                                 </label>
                                 <input
@@ -188,7 +188,7 @@ export default function PanelDocente() {
                                 />
                             </div>
                             <div>
-                                <label htmlFor="p-password" className="mb-2 block text-sm font-bold text-kawsay-forest">
+                                <label htmlFor="p-password" className="mb-2 block text-sm font-bold text-kawsay-forest dark:text-kawsay-nightText">
                                     Contraseña
                                 </label>
                                 <input
@@ -205,7 +205,7 @@ export default function PanelDocente() {
                             {error && (
                                 <p
                                     data-testid="panel-login-error"
-                                    className="rounded-2xl bg-red-50 px-4 py-3 text-sm font-semibold text-kawsay-peru"
+                                    className="rounded-2xl bg-red-50 px-4 py-3 text-sm font-semibold text-kawsay-peru dark:bg-[#3A2422] dark:text-[#E8A09A]"
                                 >
                                     {error}
                                 </p>
@@ -214,7 +214,7 @@ export default function PanelDocente() {
                                 type="submit"
                                 data-testid="panel-login-button"
                                 disabled={busy}
-                                className="w-full rounded-full bg-kawsay-olive px-6 py-3 font-display text-base font-semibold text-kawsay-ivory shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-kawsay-pine disabled:cursor-not-allowed disabled:opacity-60"
+                                className="w-full rounded-full bg-kawsay-olive px-6 py-3 font-display text-base font-semibold text-kawsay-ivory shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-kawsay-pine disabled:cursor-not-allowed disabled:opacity-60 dark:hover:bg-kawsay-leaf"
                             >
                                 {busy ? "Ingresando..." : "Ingresar"}
                             </button>
@@ -226,11 +226,11 @@ export default function PanelDocente() {
                     <div data-testid="panel-messages-view">
                         <div className="flex flex-wrap items-center justify-between gap-3">
                             <div>
-                                <h1 className="font-display text-3xl font-semibold text-kawsay-forest">
+                                <h1 className="font-display text-3xl font-semibold text-kawsay-forest dark:text-kawsay-nightText">
                                     Mensajes recibidos
                                 </h1>
-                                <p className="mt-1 flex items-center gap-2 text-sm font-bold text-kawsay-bark/70">
-                                    <Sprout className="h-4 w-4 text-kawsay-leaf" />
+                                <p className="mt-1 flex items-center gap-2 text-sm font-bold text-kawsay-bark/70 dark:text-kawsay-nightMuted">
+                                    <Sprout className="h-4 w-4 text-kawsay-leaf dark:text-kawsay-moss" />
                                     {unread > 0
                                         ? `${unread} mensaje${unread === 1 ? "" : "s"} sin leer`
                                         : "Todo leído"}
@@ -242,13 +242,13 @@ export default function PanelDocente() {
                             {messages.length === 0 && (
                                 <div
                                     data-testid="panel-empty-state"
-                                    className="flex flex-col items-center gap-3 rounded-[2rem] border border-dashed border-kawsay-line bg-white/70 p-12 text-center"
+                                    className="flex flex-col items-center gap-3 rounded-[2rem] border border-dashed border-kawsay-line bg-white/70 p-12 text-center dark:border-kawsay-nightLine dark:bg-kawsay-nightCard/70"
                                 >
                                     <Inbox className="h-8 w-8 text-kawsay-moss" />
-                                    <p className="font-display text-lg font-semibold text-kawsay-forest">
+                                    <p className="font-display text-lg font-semibold text-kawsay-forest dark:text-kawsay-nightText">
                                         Todavía no hay mensajes
                                     </p>
-                                    <p className="max-w-xs text-sm text-kawsay-bark/70">
+                                    <p className="max-w-xs text-sm text-kawsay-bark/70 dark:text-kawsay-nightMuted">
                                         Cuando alguien escriba desde la sección
                                         Contáctanos, aparecerá aquí.
                                     </p>
@@ -259,15 +259,15 @@ export default function PanelDocente() {
                                 <article
                                     key={m.id}
                                     data-testid={`panel-message-card-${i + 1}`}
-                                    className={`rounded-[1.75rem] border bg-white p-6 transition-all duration-300 sm:p-7 ${
+                                    className={`rounded-[1.75rem] border bg-white p-6 transition-all duration-300 dark:bg-kawsay-nightCard sm:p-7 ${
                                         m.leido
-                                            ? "border-kawsay-line"
-                                            : "border-kawsay-olive/50 shadow-soft"
+                                            ? "border-kawsay-line dark:border-kawsay-nightLine"
+                                            : "border-kawsay-olive/50 shadow-soft dark:border-kawsay-moss/50"
                                     }`}
                                 >
                                     <div className="flex flex-wrap items-start justify-between gap-3">
                                         <div>
-                                            <p className="font-display text-lg font-semibold text-kawsay-forest">
+                                            <p className="font-display text-lg font-semibold text-kawsay-forest dark:text-kawsay-nightText">
                                                 {m.nombre}
                                                 {!m.leido && (
                                                     <span className="ml-3 inline-flex items-center rounded-full bg-kawsay-olive px-2.5 py-0.5 align-middle text-[11px] font-bold uppercase tracking-wider text-kawsay-ivory">
@@ -275,36 +275,36 @@ export default function PanelDocente() {
                                                     </span>
                                                 )}
                                             </p>
-                                            <p className="mt-0.5 text-sm font-semibold text-kawsay-bark/70">
+                                            <p className="mt-0.5 text-sm font-semibold text-kawsay-bark/70 dark:text-kawsay-nightMuted">
                                                 {m.medio_contacto}
                                             </p>
                                         </div>
                                         <div className="flex flex-wrap items-center gap-2">
-                                            <span className="rounded-full bg-kawsay-sage px-3 py-1 text-xs font-bold text-kawsay-pine">
+                                            <span className="rounded-full bg-kawsay-sage px-3 py-1 text-xs font-bold text-kawsay-pine dark:bg-kawsay-night dark:text-kawsay-moss">
                                                 {m.motivo}
                                             </span>
                                             {m.diseno_interes && (
                                                 <span
                                                     data-testid={`panel-message-design-${i + 1}`}
-                                                    className="rounded-full bg-kawsay-brown/10 px-3 py-1 text-xs font-bold text-kawsay-brown"
+                                                    className="rounded-full bg-kawsay-brown/10 px-3 py-1 text-xs font-bold text-kawsay-brown dark:bg-kawsay-ocre/15 dark:text-kawsay-ocre"
                                                 >
                                                     {m.diseno_interes}
                                                 </span>
                                             )}
                                         </div>
                                     </div>
-                                    <p className="mt-4 text-[15px] leading-relaxed text-kawsay-bark">
+                                    <p className="mt-4 text-[15px] leading-relaxed text-kawsay-bark dark:text-kawsay-nightMuted">
                                         {m.mensaje}
                                     </p>
                                     <div className="mt-4 flex items-center justify-between gap-3">
-                                        <p className="text-xs font-semibold text-kawsay-bark/50">
+                                        <p className="text-xs font-semibold text-kawsay-bark/50 dark:text-kawsay-nightMuted/70">
                                             {formatDate(m.fecha)}
                                         </p>
                                         {!m.leido && (
                                             <button
                                                 data-testid={`panel-mark-read-${i + 1}`}
                                                 onClick={() => markRead(m)}
-                                                className="flex items-center gap-2 rounded-full bg-kawsay-ivory px-4 py-2 font-display text-sm font-semibold text-kawsay-forest ring-1 ring-inset ring-kawsay-line transition-all duration-300 hover:bg-kawsay-olive hover:text-kawsay-ivory hover:ring-kawsay-olive"
+                                                className="flex items-center gap-2 rounded-full bg-kawsay-ivory px-4 py-2 font-display text-sm font-semibold text-kawsay-forest ring-1 ring-inset ring-kawsay-line transition-all duration-300 hover:bg-kawsay-olive hover:text-kawsay-ivory hover:ring-kawsay-olive dark:bg-kawsay-night dark:text-kawsay-nightText dark:ring-kawsay-nightLine dark:hover:bg-kawsay-olive dark:hover:text-kawsay-ivory"
                                             >
                                                 <Check className="h-4 w-4" />
                                                 Marcar como leído
