@@ -27,6 +27,13 @@ Desarrollar una página web informativa para el proyecto estudiantil KAWSAY (Alu
 6. Contáctanos: 3 canales placeholder (profesora, WhatsApp, Instagram) + formulario (Nombre, Medio de contacto, Motivo, Mensaje) que guarda en MongoDB con toast de confirmación.
 7. Footer: KAWSAY, tagline, "Alumnos del Alfonso Ugarte", espacios reservados (DPCC, docentes, redes, información institucional).
 
+## Implementado (2026-10-03 — etapa 5, corrección del Hero)
+- Hero recompuesto a dos columnas limpias dentro del contenedor: texto a la izquierda (max-w-md en párrafos) y fotografía a la derecha dentro de marco orgánico con borde oliva, object-cover centrado, altura fija contenida (~520–560px) — la foto ya no va full-bleed ni invade el texto (verificado: 56px de separación en 1440px).
+- Tarjeta "Bolsas de tocuyo reutilizables" vive dentro del área de la foto (zona inferior), tanto en escritorio como en móvil.
+- Decoración del hero reducida a: blob arena, una hoja, punto ocre y arco punteado; parallax más sutil (foto 30px, decor 40px).
+- Altura del hero reducida (≈846px): la franja del marquee asoma indicando más contenido debajo.
+- Verificado en 1440/768/390: sin solapamiento texto-foto, sin overflow horizontal, sin errores de consola.
+
 ## Implementado (2026-10-03 — etapa 4, nueva imagen principal)
 - Hero recompuesto alrededor de la foto real del taller (estudiantes pintando bolsas de tocuyo con diseño peruano): foto full-bleed a la derecha en escritorio con fundido cálido hacia el marfil, tinte ocre leve, parallax suave y chip flotante; en móvil la foto va bajo el texto en marco orgánico con borde oliva. La imagen se recortó para usar solo la escena fotográfica pura (la fuente traía texto/tarjeta dibujados). Archivo: public/kawsay-hero.jpg (~145 KB).
 - Nueva tinta de acento ocre (#C99A3C) en la paleta, usada con moderación (punto del badge, iconos, detalles).
