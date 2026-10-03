@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, Leaf, Sprout } from "lucide-react";
 import { scrollToId } from "../utils/scroll";
-import PlaceholderImage from "./PlaceholderImage";
 import { EASE } from "./Reveal";
 
 const lineReveal = {
@@ -13,35 +12,81 @@ const lineReveal = {
     }),
 };
 
+const Chip = ({ mobile = false }) => (
+    <div
+        data-testid={mobile ? "hero-chip-mobile" : "hero-chip"}
+        className={`flex items-center gap-3 rounded-2xl border border-kawsay-olive/30 bg-kawsay-ivory/95 px-5 py-3.5 shadow-lift backdrop-blur-sm ${
+            mobile ? "" : "animate-float"
+        }`}
+    >
+        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-kawsay-ocre/15 text-kawsay-ocre">
+            <Sprout className="h-4 w-4" />
+        </span>
+        <div>
+            <p className="font-display text-sm font-semibold text-kawsay-forest">
+                Bolsas de tocuyo reutilizables
+            </p>
+            <p className="text-xs font-semibold text-kawsay-bark/70">
+                Diseños inspirados en nuestra identidad peruana.
+            </p>
+        </div>
+    </div>
+);
+
 export default function Hero() {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["start start", "end start"],
     });
-    const yImg = useTransform(scrollYProgress, [0, 1], [0, 70]);
+    const yImg = useTransform(scrollYProgress, [0, 1], [0, 40]);
     const yDecor = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
     return (
         <section
             id="inicio"
             ref={ref}
-            className="relative scroll-mt-20 overflow-hidden pb-16 pt-28 sm:pb-24 sm:pt-36"
+            className="relative scroll-mt-20 overflow-hidden lg:min-h-[92vh]"
         >
+            <div className="absolute inset-y-0 right-0 hidden w-[54%] lg:block">
+                <motion.div style={{ y: yImg }} className="h-full w-full">
+                    <img
+                        src="/kawsay-hero.jpg"
+                        alt="Estudiantes decorando bolsas de tocuyo con diseños inspirados en el Perú, proyecto Kawsay"
+                        data-testid="hero-image-main"
+                        className="h-full w-full scale-105 object-cover"
+                    />
+                </motion.div>
+                <div
+                    aria-hidden
+                    className="absolute inset-0"
+                    style={{
+                        background:
+                            "linear-gradient(to right, #F7F3EA 0%, rgba(247,243,234,0.85) 14%, rgba(247,243,234,0) 48%)",
+                    }}
+                />
+                <div aria-hidden className="absolute inset-0 bg-kawsay-ocre/[0.04]" />
+                <div
+                    aria-hidden
+                    className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-kawsay-ivory/90 to-transparent"
+                />
+                <div className="absolute bottom-16 left-12 z-10">
+                    <Chip />
+                </div>
+            </div>
+
             <motion.div
                 style={{ y: yDecor }}
                 aria-hidden
                 className="pointer-events-none absolute inset-0"
             >
                 <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-kawsay-sand/60 blur-2xl" />
-                <div className="absolute -right-20 top-1/3 h-80 w-80 rounded-full bg-kawsay-moss/30 blur-2xl" />
                 <div className="absolute bottom-[16%] left-[3%] h-28 w-28 rounded-full border-2 border-kawsay-olive/25" />
-                <span className="absolute right-[13%] top-[9%] h-3 w-3 rounded-full bg-kawsay-brown/30" />
-                <span className="absolute bottom-[26%] right-[3%] h-2.5 w-2.5 rounded-full bg-kawsay-olive/35" />
+                <span className="absolute left-[42%] top-[10%] h-3 w-3 rounded-full bg-kawsay-ocre/45" />
+                <span className="absolute bottom-[30%] left-[30%] h-2.5 w-2.5 rounded-full bg-kawsay-brown/30" />
                 <Leaf className="absolute left-[6%] top-[16%] h-10 w-10 -rotate-12 text-kawsay-moss/55" />
-                <Leaf className="absolute bottom-[12%] right-[8%] h-14 w-14 rotate-12 text-kawsay-leaf/35" />
                 <svg
-                    className="absolute bottom-[5%] left-[34%] h-16 w-44 text-kawsay-olive/35"
+                    className="absolute bottom-[7%] left-[30%] h-16 w-44 text-kawsay-olive/35"
                     viewBox="0 0 176 64"
                     fill="none"
                 >
@@ -55,8 +100,8 @@ export default function Hero() {
                 </svg>
             </motion.div>
 
-            <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-10">
-                <div className="lg:col-span-6">
+            <div className="relative mx-auto flex max-w-6xl items-center px-5 py-28 sm:px-8 sm:py-32 lg:min-h-[92vh] lg:py-40">
+                <div className="max-w-xl lg:max-w-lg lg:w-[46%] xl:max-w-xl">
                     <motion.div
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -65,6 +110,7 @@ export default function Hero() {
                     >
                         <Sprout className="h-3.5 w-3.5" />
                         Proyecto estudiantil · STEAM + H
+                        <span className="h-1.5 w-1.5 rounded-full bg-kawsay-ocre" />
                     </motion.div>
 
                     <h1 className="font-display text-6xl font-semibold leading-none text-kawsay-forest sm:text-7xl lg:text-8xl">
@@ -137,43 +183,26 @@ export default function Hero() {
                         </button>
                     </motion.div>
                 </div>
+            </div>
 
+            <div className="relative px-5 pb-16 sm:px-8 lg:hidden">
                 <motion.div
-                    style={{ y: yImg }}
-                    className="relative lg:col-span-6"
-                    initial={{ opacity: 0, scale: 0.96 }}
+                    initial={{ opacity: 0, scale: 0.97 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, delay: 0.35, ease: EASE }}
+                    transition={{ duration: 0.9, delay: 0.4, ease: EASE }}
+                    className="relative"
                 >
-                    <div
-                        aria-hidden
-                        className="absolute -right-6 -top-8 h-40 w-40 animate-float-slow rounded-[2.5rem] bg-kawsay-brown/15"
-                    />
-                    <div
-                        aria-hidden
-                        className="absolute -left-5 bottom-10 h-24 w-24 animate-float rounded-full border-2 border-kawsay-olive/30"
-                    />
-                    <PlaceholderImage
-                        testid="hero-image-placeholder"
-                        label="Imagen principal del proyecto"
-                        sub="Fotografía por agregar próximamente"
-                        aspect="aspect-[4/3] sm:aspect-[5/4]"
-                        rounded="organic-frame"
-                        variant="frame"
-                        className="shadow-lift"
-                    />
-                    <div className="absolute -bottom-6 left-4 flex animate-float items-center gap-3 rounded-2xl border border-kawsay-olive/35 bg-kawsay-ivory px-5 py-3.5 shadow-soft sm:left-8">
-                        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-kawsay-olive/15 text-kawsay-olive">
-                            <Sprout className="h-4 w-4" />
-                        </span>
-                        <div>
-                            <p className="font-display text-sm font-semibold text-kawsay-forest">
-                                Bolsas de tocuyo reutilizables
-                            </p>
-                            <p className="text-xs font-semibold text-kawsay-bark/70">
-                                Diseño con identidad peruana
-                            </p>
-                        </div>
+                    <div className="organic-frame relative aspect-[4/3] overflow-hidden border-2 border-kawsay-olive/40 shadow-lift">
+                        <img
+                            src="/kawsay-hero.jpg"
+                            alt="Estudiantes decorando bolsas de tocuyo del proyecto Kawsay"
+                            data-testid="hero-image-main-mobile"
+                            className="h-full w-full object-cover"
+                        />
+                        <div aria-hidden className="absolute inset-0 bg-kawsay-ocre/[0.04]" />
+                    </div>
+                    <div className="absolute -bottom-5 left-4 right-4 sm:left-8 sm:right-auto">
+                        <Chip mobile />
                     </div>
                 </motion.div>
             </div>

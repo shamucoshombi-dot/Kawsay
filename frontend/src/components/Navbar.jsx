@@ -39,10 +39,8 @@ export default function Navbar() {
 
     return (
         <header
-            className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
-                scrolled || open
-                    ? "bg-kawsay-ivory/90 shadow-soft backdrop-blur-md"
-                    : "bg-transparent"
+            className={`fixed inset-x-0 top-0 z-40 bg-kawsay-ivory/90 backdrop-blur-md transition-all duration-300 ${
+                scrolled || open ? "shadow-soft" : ""
             } border-b border-kawsay-line/60`}
         >
             <nav className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-5 sm:px-8">

@@ -68,6 +68,7 @@ module.exports = {
           olive: '#6E7F45',
           moss: '#97A56B',
           brown: '#7A5138',
+          ocre: '#C99A3C',
           bark: '#5C5045',
           ink: '#2A321E',
           peru: '#C43B2F',

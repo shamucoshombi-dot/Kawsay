@@ -27,6 +27,11 @@ Desarrollar una página web informativa para el proyecto estudiantil KAWSAY (Alu
 6. Contáctanos: 3 canales placeholder (profesora, WhatsApp, Instagram) + formulario (Nombre, Medio de contacto, Motivo, Mensaje) que guarda en MongoDB con toast de confirmación.
 7. Footer: KAWSAY, tagline, "Alumnos del Alfonso Ugarte", espacios reservados (DPCC, docentes, redes, información institucional).
 
+## Implementado (2026-10-03 — etapa 4, nueva imagen principal)
+- Hero recompuesto alrededor de la foto real del taller (estudiantes pintando bolsas de tocuyo con diseño peruano): foto full-bleed a la derecha en escritorio con fundido cálido hacia el marfil, tinte ocre leve, parallax suave y chip flotante; en móvil la foto va bajo el texto en marco orgánico con borde oliva. La imagen se recortó para usar solo la escena fotográfica pura (la fuente traía texto/tarjeta dibujados). Archivo: public/kawsay-hero.jpg (~145 KB).
+- Nueva tinta de acento ocre (#C99A3C) en la paleta, usada con moderación (punto del badge, iconos, detalles).
+- Navbar con fondo cristal marfil permanente (legible sobre la foto en todo momento).
+
 ## Implementado (2026-10-03 — etapa 3, ajuste visual)
 - Página más viva dentro de la paleta Kawsay: los fondos alternan marfil / salvia / crema cálido (#F4EBDA en Galería); nuevos tonos en la config (creamWarm).
 - Tarjetas de Nosotros con tintes distintos (crema cálido, verde claro, verde suave, arena) e iconos temáticos; chips de disciplinas STEAM+H con círculos de colores por letra (pino, oliva, marrón, musgo, hoja, bosque).
