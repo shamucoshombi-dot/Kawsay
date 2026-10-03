@@ -33,7 +33,7 @@ Desarrollar una página web informativa para el proyecto estudiantil KAWSAY (Alu
 - Tarjetas PERÚ y ALFONSO UGARTE con más contraste (franjas y lavados más presentes, bordes reforzados, chips sólidos); tarjeta Profesora con fondo salvia suave + lavado marrón.
 - Botones: primarios en verde pino (hover bosque), secundarios crema con borde verde; botón "Abrir WhatsApp" sólido oliva.
 - Hero con más detalles naturales (aro oliva, puntos marrón, arco punteado curvo) y marco de imagen con borde oliva; los marcos de fotografía (variante "frame") tienen borde y fondo verdosos en Galería.
-- Tarjetas de contacto diferenciadas por canal (salvia / verde / crema cálido); formulario con borde leaf.
+- Tarjetas de contacto diferenciadas por canal (salvia / verde / crema cálido); formulario con borde leaf; la tarjeta de WhatsApp usa la figura del logo de WhatsApp (SVG propio) en la tinta oliva de Kawsay, no el icono genérico de mensaje ni los colores de marca.
 
 ## Implementado (2026-10-03 — etapa 2)
 - Enfoque informativo: se eliminó todo lenguaje de compra; el catálogo es presentación informativa (imagen, nombre, descripción, precio S/ 10.00 provisional) sin botones de compra ni "Me interesa".
