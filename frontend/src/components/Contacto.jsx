@@ -21,6 +21,8 @@ const CANALES = [
         titulo: "Contacto del proyecto",
         valor: NUMERO,
         testid: "contact-channel-proyecto",
+        cardCls: "bg-kawsay-sage/45 border-kawsay-leaf/30",
+        iconCls: "bg-kawsay-pine/10 text-kawsay-pine",
     },
     {
         icon: MessageCircle,
@@ -29,12 +31,16 @@ const CANALES = [
         link: "https://wa.me/51993929294",
         linkLabel: "Abrir WhatsApp",
         testid: "contact-channel-whatsapp",
+        cardCls: "bg-[#EDF4DE] border-kawsay-olive/35",
+        iconCls: "bg-kawsay-olive/15 text-kawsay-olive",
     },
     {
         icon: Instagram,
         titulo: "Instagram del proyecto",
         valor: "Por compartir próximamente",
         testid: "contact-channel-instagram",
+        cardCls: "bg-[#FBF3E6] border-kawsay-brown/25",
+        iconCls: "bg-kawsay-brown/10 text-kawsay-brown",
     },
 ];
 
@@ -100,16 +106,16 @@ export default function Contacto() {
                             <Reveal key={c.titulo} delay={0.05 + i * 0.07}>
                                 <div
                                     data-testid={c.testid}
-                                    className="flex items-center gap-4 rounded-[1.75rem] border border-kawsay-line bg-white p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-kawsay-olive/50 hover:shadow-soft"
+                                    className={`flex items-center gap-4 rounded-[1.75rem] border p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-kawsay-olive/60 hover:shadow-soft ${c.cardCls}`}
                                 >
-                                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-kawsay-leaf/10 text-kawsay-leaf">
+                                    <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${c.iconCls}`}>
                                         <c.icon className="h-5 w-5" />
                                     </span>
                                     <div className="min-w-0 flex-1">
                                         <p className="font-display text-base font-semibold text-kawsay-forest">
                                             {c.titulo}
                                         </p>
-                                        <p className="text-sm font-semibold text-kawsay-bark/60">
+                                        <p className="text-sm font-semibold text-kawsay-bark/70">
                                             {c.valor}
                                         </p>
                                         {c.link && (
@@ -118,7 +124,7 @@ export default function Contacto() {
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 data-testid="whatsapp-link-button"
-                                                className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-kawsay-olive/10 px-3.5 py-1.5 text-xs font-bold text-kawsay-olive transition-colors duration-300 hover:bg-kawsay-olive hover:text-kawsay-ivory"
+                                                className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-kawsay-olive px-3.5 py-1.5 text-xs font-bold text-kawsay-ivory shadow-sm transition-colors duration-300 hover:bg-kawsay-pine"
                                             >
                                                 {c.linkLabel}
                                                 <ArrowUpRight className="h-3.5 w-3.5" />
@@ -141,7 +147,7 @@ export default function Contacto() {
                         <form
                             data-testid="contact-form"
                             onSubmit={submit}
-                            className="rounded-[2rem] border border-kawsay-line bg-white p-6 shadow-soft sm:p-8"
+                            className="rounded-[2rem] border-2 border-kawsay-leaf/25 bg-white p-6 shadow-soft sm:p-8"
                         >
                             <div className="grid gap-5 sm:grid-cols-2">
                                 <div>
@@ -214,7 +220,7 @@ export default function Contacto() {
                                 type="submit"
                                 data-testid="contact-submit-button"
                                 disabled={sending}
-                                className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-kawsay-olive px-7 py-3.5 font-display text-base font-semibold text-kawsay-ivory shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-kawsay-pine hover:shadow-lift disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                                className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-kawsay-pine px-7 py-3.5 font-display text-base font-semibold text-kawsay-ivory shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-kawsay-forest hover:shadow-lift disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
                             >
                                 {sending ? "Enviando..." : "Enviar"}
                                 <Send className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

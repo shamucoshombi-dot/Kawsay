@@ -27,6 +27,14 @@ Desarrollar una página web informativa para el proyecto estudiantil KAWSAY (Alu
 6. Contáctanos: 3 canales placeholder (profesora, WhatsApp, Instagram) + formulario (Nombre, Medio de contacto, Motivo, Mensaje) que guarda en MongoDB con toast de confirmación.
 7. Footer: KAWSAY, tagline, "Alumnos del Alfonso Ugarte", espacios reservados (DPCC, docentes, redes, información institucional).
 
+## Implementado (2026-10-03 — etapa 3, ajuste visual)
+- Página más viva dentro de la paleta Kawsay: los fondos alternan marfil / salvia / crema cálido (#F4EBDA en Galería); nuevos tonos en la config (creamWarm).
+- Tarjetas de Nosotros con tintes distintos (crema cálido, verde claro, verde suave, arena) e iconos temáticos; chips de disciplinas STEAM+H con círculos de colores por letra (pino, oliva, marrón, musgo, hoja, bosque).
+- Tarjetas PERÚ y ALFONSO UGARTE con más contraste (franjas y lavados más presentes, bordes reforzados, chips sólidos); tarjeta Profesora con fondo salvia suave + lavado marrón.
+- Botones: primarios en verde pino (hover bosque), secundarios crema con borde verde; botón "Abrir WhatsApp" sólido oliva.
+- Hero con más detalles naturales (aro oliva, puntos marrón, arco punteado curvo) y marco de imagen con borde oliva; los marcos de fotografía (variante "frame") tienen borde y fondo verdosos en Galería.
+- Tarjetas de contacto diferenciadas por canal (salvia / verde / crema cálido); formulario con borde leaf.
+
 ## Implementado (2026-10-03 — etapa 2)
 - Enfoque informativo: se eliminó todo lenguaje de compra; el catálogo es presentación informativa (imagen, nombre, descripción, precio S/ 10.00 provisional) sin botones de compra ni "Me interesa".
 - Contacto con propósito de consultas/comentarios/ideas: tarjeta "Contacto del proyecto" +51 993 929 294, tarjeta "WhatsApp" con botón wa.me/51993929294, Instagram conservado como placeholder; formulario con motivos exactos: Sugerir una idea / Dejar un comentario / Realizar una consulta.

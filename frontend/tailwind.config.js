@@ -58,6 +58,7 @@ module.exports = {
         kawsay: {
           ivory: '#F7F3EA',
           cream: '#EFE8D8',
+          creamWarm: '#F4EBDA',
           sand: '#E2D8C0',
           sage: '#E7EDD8',
           line: '#E3DAC3',

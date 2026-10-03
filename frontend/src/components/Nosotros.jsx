@@ -4,18 +4,18 @@ import { Reveal, SectionTag } from "./Reveal";
 import PlaceholderImage from "./PlaceholderImage";
 
 const DISCIPLINAS = [
-    { letra: "S", nombre: "Ciencia" },
-    { letra: "T", nombre: "Tecnología" },
-    { letra: "E", nombre: "Ingeniería" },
-    { letra: "A", nombre: "Arte" },
-    { letra: "M", nombre: "Matemática" },
-    { letra: "H", nombre: "Humanidades" },
+    { letra: "S", nombre: "Ciencia", circle: "bg-kawsay-pine", borde: "border-kawsay-pine/30" },
+    { letra: "T", nombre: "Tecnología", circle: "bg-kawsay-olive", borde: "border-kawsay-olive/40" },
+    { letra: "E", nombre: "Ingeniería", circle: "bg-kawsay-brown", borde: "border-kawsay-brown/30" },
+    { letra: "A", nombre: "Arte", circle: "bg-kawsay-moss", borde: "border-kawsay-moss/50" },
+    { letra: "M", nombre: "Matemática", circle: "bg-kawsay-leaf", borde: "border-kawsay-leaf/35" },
+    { letra: "H", nombre: "Humanidades", circle: "bg-kawsay-forest", borde: "border-kawsay-forest/25" },
 ];
 
-const Card = ({ icon: Icon, title, children, delay = 0 }) => (
+const Card = ({ icon: Icon, title, children, delay = 0, tint = "bg-white", iconCls = "bg-kawsay-leaf/10 text-kawsay-leaf" }) => (
     <Reveal delay={delay} className="h-full">
-        <div className="group h-full rounded-[2rem] border border-kawsay-line bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-kawsay-olive/50 hover:shadow-soft sm:p-8">
-            <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-kawsay-leaf/10 text-kawsay-leaf transition-transform duration-300 group-hover:scale-110">
+        <div className={`group h-full rounded-[2rem] border border-kawsay-line p-7 transition-all duration-300 hover:-translate-y-1 hover:border-kawsay-olive/50 hover:shadow-soft sm:p-8 ${tint}`}>
+            <span className={`mb-5 flex h-12 w-12 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-110 ${iconCls}`}>
                 <Icon className="h-5 w-5" />
             </span>
             <h3 className="mb-3 font-display text-xl font-semibold text-kawsay-forest sm:text-2xl">
@@ -42,7 +42,7 @@ export default function Nosotros() {
                 </Reveal>
 
                 <div className="mt-12 grid gap-6 md:grid-cols-2">
-                    <Card icon={HeartHandshake} title="¿Quiénes somos?" delay={0.05}>
+                    <Card icon={HeartHandshake} title="¿Quiénes somos?" delay={0.05} tint="bg-[#FBF5E9]" iconCls="bg-kawsay-brown/10 text-kawsay-brown">
                         <p>
                             Somos estudiantes del Alfonso Ugarte que participamos en una
                             iniciativa basada en el trabajo colaborativo y la integración
@@ -50,7 +50,7 @@ export default function Nosotros() {
                         </p>
                     </Card>
 
-                    <Card icon={FlaskConical} title="¿Qué es STEAM + H?" delay={0.12}>
+                    <Card icon={FlaskConical} title="¿Qué es STEAM + H?" delay={0.12} tint="bg-[#F1F6E3]" iconCls="bg-kawsay-olive/15 text-kawsay-olive">
                         <p>Es un enfoque que integra seis disciplinas:</p>
                         <div className="grid grid-cols-2 gap-2.5 pt-1">
                             {DISCIPLINAS.map((d, i) => (
@@ -60,9 +60,9 @@ export default function Nosotros() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, amount: 0.2 }}
                                     transition={{ duration: 0.45, delay: 0.15 + i * 0.06 }}
-                                    className="flex items-center gap-2.5 rounded-2xl border border-kawsay-line bg-kawsay-ivory px-3 py-2.5"
+                                    className={`flex items-center gap-2.5 rounded-2xl border bg-white/80 px-3 py-2.5 ${d.borde}`}
                                 >
-                                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-kawsay-olive font-display text-sm font-semibold text-kawsay-ivory">
+                                    <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-display text-sm font-semibold text-kawsay-ivory ${d.circle}`}>
                                         {d.letra}
                                     </span>
                                     <span className="text-sm font-bold text-kawsay-forest">
@@ -73,7 +73,7 @@ export default function Nosotros() {
                         </div>
                     </Card>
 
-                    <Card icon={Leaf} title="STEAM + H en Kawsay" delay={0.08}>
+                    <Card icon={Leaf} title="STEAM + H en Kawsay" delay={0.08} tint="bg-[#ECF3DA]" iconCls="bg-kawsay-leaf/15 text-kawsay-leaf">
                         <p>
                             En Kawsay, el enfoque se aplica mediante la participación de
                             los estudiantes en diferentes actividades relacionadas con el
@@ -82,7 +82,7 @@ export default function Nosotros() {
                         </p>
                     </Card>
 
-                    <Card icon={Package} title="Nuestro producto" delay={0.15}>
+                    <Card icon={Package} title="Nuestro producto" delay={0.15} tint="bg-[#F9F1E2]" iconCls="bg-kawsay-brown/10 text-kawsay-brown">
                         <p>
                             Actualmente elaboramos bolsas de tocuyo reutilizables con
                             diseños desarrollados con apoyo de herramientas de
@@ -102,9 +102,9 @@ export default function Nosotros() {
                                 data-testid="card-peru"
                                 style={{
                                     backgroundImage:
-                                        "linear-gradient(90deg, rgba(196,59,47,0.09) 0%, rgba(196,59,47,0.09) 17%, rgba(196,59,47,0.015) 17%, rgba(196,59,47,0.015) 83%, rgba(196,59,47,0.09) 83%)",
+                                        "linear-gradient(90deg, rgba(196,59,47,0.14) 0%, rgba(196,59,47,0.14) 17%, rgba(196,59,47,0.03) 17%, rgba(196,59,47,0.03) 83%, rgba(196,59,47,0.14) 83%)",
                                 }}
-                                className="group h-full rounded-[1.75rem] border-2 border-kawsay-peru/30 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-kawsay-peru/50 hover:shadow-soft sm:p-7"
+                                className="group h-full rounded-[1.75rem] border-2 border-kawsay-peru/40 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-kawsay-peru/60 hover:shadow-soft sm:p-7"
                             >
                                 <div className="flex items-center justify-between gap-3">
                                     <span className="inline-flex items-center gap-2 rounded-full bg-kawsay-peru/10 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-kawsay-peru">
@@ -113,11 +113,11 @@ export default function Nosotros() {
                                     </span>
                                     <span
                                         aria-hidden
-                                        className="inline-flex h-4 w-7 shrink-0 overflow-hidden rounded-sm border border-kawsay-peru/25"
+                                        className="inline-flex h-4 w-7 shrink-0 overflow-hidden rounded-sm border border-kawsay-peru/30"
                                     >
-                                        <span className="w-[30%] bg-kawsay-peru/80" />
+                                        <span className="w-[30%] bg-kawsay-peru" />
                                         <span className="w-[40%] bg-white" />
-                                        <span className="w-[30%] bg-kawsay-peru/80" />
+                                        <span className="w-[30%] bg-kawsay-peru" />
                                     </span>
                                 </div>
                                 <h3 className="mt-4 font-display text-xl font-semibold text-kawsay-peru sm:text-2xl">
@@ -135,9 +135,9 @@ export default function Nosotros() {
                                 data-testid="card-alfonso-ugarte"
                                 style={{
                                     backgroundImage:
-                                        "radial-gradient(circle at 12% 18%, rgba(232,184,0,0.12), transparent 42%), radial-gradient(circle at 88% 88%, rgba(123,18,48,0.10), transparent 48%)",
+                                        "radial-gradient(circle at 12% 18%, rgba(232,184,0,0.17), transparent 42%), radial-gradient(circle at 88% 88%, rgba(123,18,48,0.15), transparent 48%)",
                                 }}
-                                className="group h-full rounded-[1.75rem] border-2 border-kawsay-guinda/30 bg-white p-6 ring-1 ring-kawsay-gold/60 transition-all duration-300 hover:-translate-y-1 hover:border-kawsay-guinda/50 hover:shadow-soft sm:p-7"
+                                className="group h-full rounded-[1.75rem] border-2 border-kawsay-guinda/40 bg-white p-6 ring-1 ring-kawsay-gold/70 transition-all duration-300 hover:-translate-y-1 hover:border-kawsay-guinda/60 hover:shadow-soft sm:p-7"
                             >
                                 <div className="flex items-center justify-between gap-3">
                                     <span className="inline-flex items-center rounded-full bg-kawsay-guinda px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
@@ -155,10 +155,10 @@ export default function Nosotros() {
                                     </h3>
                                     <span
                                         aria-hidden
-                                        className="inline-flex h-4 w-7 shrink-0 overflow-hidden rounded-sm border border-kawsay-guinda/25"
+                                        className="inline-flex h-4 w-7 shrink-0 overflow-hidden rounded-sm border border-kawsay-guinda/30"
                                     >
-                                        <span className="w-1/2 bg-kawsay-guinda/80" />
-                                        <span className="w-1/2 bg-kawsay-gold/80" />
+                                        <span className="w-1/2 bg-kawsay-guinda/90" />
+                                        <span className="w-1/2 bg-kawsay-gold" />
                                     </span>
                                 </div>
                                 <p className="mt-2 max-w-md text-[15px] leading-relaxed text-kawsay-bark">
@@ -173,7 +173,11 @@ export default function Nosotros() {
                     <Reveal delay={0.15}>
                         <div
                             data-testid="card-profesora"
-                            className="relative mx-auto flex max-w-2xl flex-col items-center gap-6 overflow-hidden rounded-[1.75rem] border border-kawsay-brown/25 bg-white p-6 text-center shadow-soft sm:flex-row sm:p-7 sm:text-left"
+                            style={{
+                                backgroundImage:
+                                    "radial-gradient(circle at 88% 10%, rgba(122,81,56,0.08), transparent 45%)",
+                            }}
+                            className="relative mx-auto flex max-w-2xl flex-col items-center gap-6 overflow-hidden rounded-[1.75rem] border border-kawsay-brown/30 bg-kawsay-sage/35 p-6 text-center shadow-soft sm:flex-row sm:p-7 sm:text-left"
                         >
                             <PlaceholderImage
                                 label="Fotografía de la docente"

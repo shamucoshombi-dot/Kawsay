@@ -13,7 +13,7 @@ export default function Galeria() {
     return (
         <section
             id="galeria"
-            className="relative scroll-mt-20 overflow-hidden py-20 sm:py-28"
+            className="relative scroll-mt-20 overflow-hidden bg-kawsay-creamWarm/60 py-20 sm:py-28"
         >
             <div aria-hidden className="pointer-events-none absolute inset-0">
                 <div className="absolute -left-28 top-24 h-64 w-64 rounded-full bg-kawsay-sand/50 blur-2xl" />
@@ -50,13 +50,13 @@ export default function Galeria() {
                             >
                                 <Reveal className="md:w-[42%]">
                                     <div>
-                                        <span className="font-display text-5xl font-semibold text-kawsay-sand sm:text-6xl">
+                                        <span className="font-display text-5xl font-semibold text-kawsay-olive/60 sm:text-6xl">
                                             {b.num}
                                         </span>
                                         <h3 className="mt-3 font-display text-2xl font-semibold text-kawsay-forest sm:text-3xl">
                                             {b.title}
                                         </h3>
-                                        <div className="mt-4 rounded-2xl border border-dashed border-kawsay-line bg-white/60 p-4">
+                                        <div className="mt-4 rounded-2xl border border-dashed border-kawsay-olive/40 bg-kawsay-sage/30 p-4">
                                             <p className="text-sm font-semibold text-kawsay-bark/70">
                                                 Breve descripción de esta etapa — se
                                                 agregará próximamente.
@@ -71,6 +71,7 @@ export default function Galeria() {
                                                 label={`Fotografía 1 · ${b.title}`}
                                                 sub="Por agregar"
                                                 aspect="aspect-[4/3]"
+                                                variant="frame"
                                                 testid={`gallery-photo-${i + 1}-a`}
                                             />
                                         </div>
@@ -80,6 +81,7 @@ export default function Galeria() {
                                                 sub="Por agregar"
                                                 aspect="aspect-square"
                                                 rounded="rounded-[1.5rem]"
+                                                variant="frame"
                                                 testid={`gallery-photo-${i + 1}-b`}
                                             />
                                         </div>

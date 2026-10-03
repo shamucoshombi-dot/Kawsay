@@ -34,9 +34,25 @@ export default function Hero() {
                 className="pointer-events-none absolute inset-0"
             >
                 <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-kawsay-sand/60 blur-2xl" />
-                <div className="absolute -right-20 top-1/3 h-80 w-80 rounded-full bg-kawsay-moss/25 blur-2xl" />
-                <Leaf className="absolute left-[6%] top-[16%] h-10 w-10 -rotate-12 text-kawsay-moss/50" />
-                <Leaf className="absolute bottom-[12%] right-[8%] h-14 w-14 rotate-12 text-kawsay-leaf/30" />
+                <div className="absolute -right-20 top-1/3 h-80 w-80 rounded-full bg-kawsay-moss/30 blur-2xl" />
+                <div className="absolute bottom-[16%] left-[3%] h-28 w-28 rounded-full border-2 border-kawsay-olive/25" />
+                <span className="absolute right-[13%] top-[9%] h-3 w-3 rounded-full bg-kawsay-brown/30" />
+                <span className="absolute bottom-[26%] right-[3%] h-2.5 w-2.5 rounded-full bg-kawsay-olive/35" />
+                <Leaf className="absolute left-[6%] top-[16%] h-10 w-10 -rotate-12 text-kawsay-moss/55" />
+                <Leaf className="absolute bottom-[12%] right-[8%] h-14 w-14 rotate-12 text-kawsay-leaf/35" />
+                <svg
+                    className="absolute bottom-[5%] left-[34%] h-16 w-44 text-kawsay-olive/35"
+                    viewBox="0 0 176 64"
+                    fill="none"
+                >
+                    <path
+                        d="M6 58 C 56 12, 118 12, 170 50"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeDasharray="1 9"
+                    />
+                </svg>
             </motion.div>
 
             <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-10">
@@ -45,7 +61,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, ease: EASE }}
-                        className="mb-7 inline-flex items-center gap-2 rounded-full border border-kawsay-line bg-white/70 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-kawsay-leaf"
+                        className="mb-7 inline-flex items-center gap-2 rounded-full border border-kawsay-olive/35 bg-kawsay-sage/50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-kawsay-pine"
                     >
                         <Sprout className="h-3.5 w-3.5" />
                         Proyecto estudiantil · STEAM + H
@@ -107,7 +123,7 @@ export default function Hero() {
                         <button
                             data-testid="hero-cta-button"
                             onClick={() => scrollToId("nosotros")}
-                            className="group inline-flex items-center gap-2 rounded-full bg-kawsay-olive px-7 py-3.5 font-display text-base font-semibold text-kawsay-ivory shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-kawsay-pine hover:shadow-lift"
+                            className="group inline-flex items-center gap-2 rounded-full bg-kawsay-pine px-7 py-3.5 font-display text-base font-semibold text-kawsay-ivory shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-kawsay-forest hover:shadow-lift"
                         >
                             Conoce nuestro proyecto
                             <ArrowDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
@@ -115,7 +131,7 @@ export default function Hero() {
                         <button
                             data-testid="hero-secondary-link"
                             onClick={() => scrollToId("catalogo")}
-                            className="inline-flex items-center gap-2 rounded-full border border-kawsay-line bg-white/70 px-6 py-3 font-display text-base font-semibold text-kawsay-forest transition-all duration-300 hover:-translate-y-0.5 hover:border-kawsay-olive"
+                            className="inline-flex items-center gap-2 rounded-full border-2 border-kawsay-olive/50 bg-kawsay-ivory px-6 py-3 font-display text-base font-semibold text-kawsay-pine transition-all duration-300 hover:-translate-y-0.5 hover:border-kawsay-olive hover:bg-kawsay-sage/40"
                         >
                             Ver catálogo
                         </button>
@@ -133,16 +149,21 @@ export default function Hero() {
                         aria-hidden
                         className="absolute -right-6 -top-8 h-40 w-40 animate-float-slow rounded-[2.5rem] bg-kawsay-brown/15"
                     />
+                    <div
+                        aria-hidden
+                        className="absolute -left-5 bottom-10 h-24 w-24 animate-float rounded-full border-2 border-kawsay-olive/30"
+                    />
                     <PlaceholderImage
                         testid="hero-image-placeholder"
                         label="Imagen principal del proyecto"
                         sub="Fotografía por agregar próximamente"
                         aspect="aspect-[4/3] sm:aspect-[5/4]"
                         rounded="organic-frame"
+                        variant="frame"
                         className="shadow-lift"
                     />
-                    <div className="absolute -bottom-6 left-4 flex animate-float items-center gap-3 rounded-2xl border border-kawsay-line bg-white/95 px-5 py-3.5 shadow-soft sm:left-8">
-                        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-kawsay-leaf/10 text-kawsay-leaf">
+                    <div className="absolute -bottom-6 left-4 flex animate-float items-center gap-3 rounded-2xl border border-kawsay-olive/35 bg-kawsay-ivory px-5 py-3.5 shadow-soft sm:left-8">
+                        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-kawsay-olive/15 text-kawsay-olive">
                             <Sprout className="h-4 w-4" />
                         </span>
                         <div>
