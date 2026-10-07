@@ -38,6 +38,10 @@ const BLOQUES = [
         title: "Detalles y promoción",
         disciplina: "Tecnología y Arte",
         texto: "Se realizaron los últimos acabados para mejorar la presentación del producto y se creó material visual destinado a darlo a conocer y promoverlo.",
+        fotos: [
+            { src: "/etapa-4-b.jpg", alt: "Material visual de promoción creado por los estudiantes" },
+            { src: "/etapa-4-a.jpg", alt: "Presentación final de una bolsa de tocuyo decorada" },
+        ],
     },
 ];
 
