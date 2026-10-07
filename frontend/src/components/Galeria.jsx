@@ -28,6 +28,10 @@ const BLOQUES = [
         title: "Elaboración y construcción",
         disciplina: "Humanidades e Ingeniería",
         texto: "Se llevaron a cabo las actividades prácticas del proyecto, aplicando lo planificado y desarrollando elementos relacionados con la elaboración y presentación de las bolsas.",
+        fotos: [
+            { src: "/etapa-3-a.jpg", alt: "Estudiantes elaborando las bolsas de tocuyo en el aula" },
+            { src: "/etapa-3-b.jpg", alt: "Detalle de manos trabajando el tocuyo de las bolsas" },
+        ],
     },
     {
         num: "04",
