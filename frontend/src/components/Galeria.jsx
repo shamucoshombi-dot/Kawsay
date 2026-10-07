@@ -1,12 +1,32 @@
-import { Leaf } from "lucide-react";
+import { Leaf, QrCode } from "lucide-react";
 import { Reveal, SectionTag } from "./Reveal";
 import PlaceholderImage from "./PlaceholderImage";
 
 const BLOQUES = [
-    { num: "01", title: "Trabajo colaborativo" },
-    { num: "02", title: "Creación y diseño" },
-    { num: "03", title: "Elaboración" },
-    { num: "04", title: "Participación estudiantil" },
+    {
+        num: "01",
+        title: "Planificación y organización",
+        disciplina: "Matemática y Ciencias",
+        texto: "Se analizaron medidas, materiales y aspectos necesarios para planificar cómo se desarrollarían las bolsas, buscando que el proyecto fuera práctico y funcional.",
+    },
+    {
+        num: "02",
+        title: "Creatividad y diseño",
+        disciplina: "Participación de todas las disciplinas",
+        texto: "Cada disciplina aportó propuestas e ideas para crear diseños originales, combinando creatividad, conocimientos y diferentes perspectivas.",
+    },
+    {
+        num: "03",
+        title: "Elaboración y construcción",
+        disciplina: "Humanidades e Ingeniería",
+        texto: "Se llevaron a cabo las actividades prácticas del proyecto, aplicando lo planificado y desarrollando elementos relacionados con la elaboración y presentación de las bolsas.",
+    },
+    {
+        num: "04",
+        title: "Detalles y promoción",
+        disciplina: "Tecnología y Arte",
+        texto: "Se realizaron los últimos acabados para mejorar la presentación del producto y se creó material visual destinado a darlo a conocer y promoverlo.",
+    },
 ];
 
 export default function Galeria() {
@@ -53,13 +73,15 @@ export default function Galeria() {
                                         <span className="font-display text-5xl font-semibold text-kawsay-olive/60 dark:text-kawsay-moss/50 sm:text-6xl">
                                             {b.num}
                                         </span>
-                                        <h3 className="mt-3 font-display text-2xl font-semibold text-kawsay-forest dark:text-kawsay-nightText sm:text-3xl">
+                                        <h3 className="mt-3 font-display text-2xl font-semibold leading-tight text-kawsay-forest dark:text-kawsay-nightText sm:text-3xl">
                                             {b.title}
                                         </h3>
-                                        <div className="mt-4 rounded-2xl border border-dashed border-kawsay-olive/40 bg-kawsay-sage/30 p-4 dark:border-kawsay-nightLine dark:bg-kawsay-nightCard/70">
-                                            <p className="text-sm font-semibold text-kawsay-bark/70 dark:text-kawsay-nightMuted">
-                                                Breve descripción de esta etapa — se
-                                                agregará próximamente.
+                                        <p className="mt-2.5 inline-flex rounded-full bg-kawsay-olive/10 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.14em] text-kawsay-olive dark:bg-kawsay-olive/20 dark:text-kawsay-moss">
+                                            {b.disciplina}
+                                        </p>
+                                        <div className="mt-4 rounded-2xl border-l-4 border-kawsay-olive/50 bg-white/70 p-4 dark:border-kawsay-moss/60 dark:bg-kawsay-nightCard/70">
+                                            <p className="text-[15px] leading-relaxed text-kawsay-bark dark:text-kawsay-nightMuted">
+                                                {b.texto}
                                             </p>
                                         </div>
                                     </div>
@@ -91,6 +113,28 @@ export default function Galeria() {
                         );
                     })}
                 </div>
+
+                <Reveal delay={0.1}>
+                    <div className="mt-20 flex flex-col items-center text-center sm:mt-24">
+                        <div className="relative rounded-[1.75rem] border-2 border-kawsay-olive/40 bg-white p-4 shadow-lift dark:border-kawsay-moss/45">
+                            <span className="absolute -left-3 -top-3 flex h-9 w-9 items-center justify-center rounded-full bg-kawsay-olive text-kawsay-ivory shadow-soft">
+                                <QrCode className="h-4 w-4" />
+                            </span>
+                            <img
+                                src="/kawsay-qr.png"
+                                alt="Código QR del proyecto Kawsay"
+                                data-testid="gallery-qr-code"
+                                className="h-44 w-44 sm:h-52 sm:w-52"
+                            />
+                        </div>
+                        <p
+                            data-testid="gallery-qr-text"
+                            className="mt-6 max-w-sm font-display text-lg font-semibold leading-snug text-kawsay-forest dark:text-kawsay-nightText sm:text-xl"
+                        >
+                            ¿Quieres ver más sobre nuestro proceso? ¡Escanea el código QR!
+                        </p>
+                    </div>
+                </Reveal>
             </div>
         </section>
     );
