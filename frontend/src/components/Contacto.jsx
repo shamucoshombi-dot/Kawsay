@@ -42,7 +42,9 @@ const CANALES = [
     {
         icon: Instagram,
         titulo: "Instagram del proyecto",
-        valor: "Por compartir próximamente",
+        valor: "KawsayAU0",
+        link: "https://instagram.com/KawsayAU0",
+        linkLabel: "Abrir Instagram",
         testid: "contact-channel-instagram",
         cardCls: "bg-[#FBF3E6] border-kawsay-brown/25 dark:bg-kawsay-nightCard dark:border-kawsay-brown/40",
         iconCls: "bg-kawsay-brown/10 text-kawsay-brown dark:bg-kawsay-brown/25 dark:text-kawsay-ocre",
@@ -128,7 +130,7 @@ export default function Contacto() {
                                                 href={c.link}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                data-testid="whatsapp-link-button"
+                                                data-testid={`${c.testid}-link`}
                                                 className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-kawsay-olive px-3.5 py-1.5 text-xs font-bold text-kawsay-ivory shadow-sm transition-colors duration-300 hover:bg-kawsay-pine dark:hover:bg-kawsay-leaf"
                                             >
                                                 {c.linkLabel}
@@ -139,13 +141,6 @@ export default function Contacto() {
                                 </div>
                             </Reveal>
                         ))}
-                        <Reveal delay={0.25}>
-                            <div className="rounded-[1.75rem] border border-dashed border-kawsay-line bg-kawsay-ivory/70 p-5 dark:border-kawsay-nightLine dark:bg-kawsay-nightCard/50">
-                                <p className="text-sm leading-relaxed text-kawsay-bark/70 dark:text-kawsay-nightMuted">
-                                    El Instagram del proyecto se agregará próximamente.
-                                </p>
-                            </div>
-                        </Reveal>
                     </div>
 
                     <Reveal delay={0.1} className="lg:col-span-7">

@@ -27,6 +27,10 @@ Desarrollar una página web informativa para el proyecto estudiantil KAWSAY (Alu
 6. Contáctanos: 3 canales placeholder (profesora, WhatsApp, Instagram) + formulario (Nombre, Medio de contacto, Motivo, Mensaje) que guarda en MongoDB con toast de confirmación.
 7. Footer: KAWSAY, tagline, "Alumnos del Alfonso Ugarte", espacios reservados (DPCC, docentes, redes, información institucional).
 
+## Implementado (2026-10-07 — footer y contacto finales)
+- Footer con datos reales: Área → DPCC, Docente → Patricia Vega Cruz, WhatsApp → +51 901 466 082, Institución Educativa Emblemática → Alfonso Ugarte.
+- Contáctanos: Instagram del proyecto ahora es KawsayAU0 con botón "Abrir Instagram" (instagram.com/KawsayAU0); se retiró la nota de "próximamente".
+
 ## Implementado (2026-10-07 — catálogo PDF)
 - La sección Catálogo ahora es un visor del PDF real del proyecto (`/catalogo.pdf`, "CATÁLOGO 3roD"): 9 páginas verticales prerenderizadas a JPG (`/catalogo/pagina-N.jpg`), una página centrada a la vez con flechas laterales, puntos de página, indicador "Página X de 9", navegación por teclado y deslizamiento táctil en móvil, enlace "Ver PDF completo". El visor funciona en modo claro y oscuro.
 
