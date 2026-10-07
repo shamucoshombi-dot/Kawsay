@@ -8,6 +8,10 @@ const BLOQUES = [
         title: "Planificación y organización",
         disciplina: "Matemática y Ciencias",
         texto: "Se analizaron medidas, materiales y aspectos necesarios para planificar cómo se desarrollarían las bolsas, buscando que el proyecto fuera práctico y funcional.",
+        fotos: [
+            { src: "/etapa-1-b.jpg", alt: "Estudiantes analizando materiales y medidas en grupo" },
+            { src: "/etapa-1-a.jpg", alt: "Estudiantes planificando el proyecto Kawsay en conjunto" },
+        ],
     },
     {
         num: "02",
@@ -89,23 +93,45 @@ export default function Galeria() {
                                 <Reveal delay={0.1} className="md:w-[58%]">
                                     <div className="grid grid-cols-5 gap-4">
                                         <div className="col-span-3">
-                                            <PlaceholderImage
-                                                label={`Fotografía 1 · ${b.title}`}
-                                                sub="Por agregar"
-                                                aspect="aspect-[4/3]"
-                                                variant="frame"
-                                                testid={`gallery-photo-${i + 1}-a`}
-                                            />
+                                            {b.fotos ? (
+                                                <div className="organic-frame relative aspect-[4/3] overflow-hidden border-2 border-kawsay-olive/40 shadow-soft dark:border-kawsay-moss/40">
+                                                    <img
+                                                        src={b.fotos[0].src}
+                                                        alt={b.fotos[0].alt}
+                                                        data-testid={`gallery-photo-${i + 1}-a`}
+                                                        className="h-full w-full object-cover transition-transform duration-500 hover:scale-[1.03]"
+                                                    />
+                                                </div>
+                                            ) : (
+                                                <PlaceholderImage
+                                                    label={`Fotografía 1 · ${b.title}`}
+                                                    sub="Por agregar"
+                                                    aspect="aspect-[4/3]"
+                                                    variant="frame"
+                                                    testid={`gallery-photo-${i + 1}-a`}
+                                                />
+                                            )}
                                         </div>
                                         <div className={`col-span-2 ${reversed ? "-mt-6" : "mt-6"}`}>
-                                            <PlaceholderImage
-                                                label={`Fotografía 2`}
-                                                sub="Por agregar"
-                                                aspect="aspect-square"
-                                                rounded="rounded-[1.5rem]"
-                                                variant="frame"
-                                                testid={`gallery-photo-${i + 1}-b`}
-                                            />
+                                            {b.fotos ? (
+                                                <div className="relative aspect-square overflow-hidden rounded-[1.5rem] border-2 border-kawsay-olive/40 shadow-soft dark:border-kawsay-moss/40">
+                                                    <img
+                                                        src={b.fotos[1].src}
+                                                        alt={b.fotos[1].alt}
+                                                        data-testid={`gallery-photo-${i + 1}-b`}
+                                                        className="h-full w-full object-cover transition-transform duration-500 hover:scale-[1.03]"
+                                                    />
+                                                </div>
+                                            ) : (
+                                                <PlaceholderImage
+                                                    label={`Fotografía 2`}
+                                                    sub="Por agregar"
+                                                    aspect="aspect-square"
+                                                    rounded="rounded-[1.5rem]"
+                                                    variant="frame"
+                                                    testid={`gallery-photo-${i + 1}-b`}
+                                                />
+                                            )}
                                         </div>
                                     </div>
                                 </Reveal>

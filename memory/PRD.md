@@ -31,6 +31,8 @@ Desarrollar una página web informativa para el proyecto estudiantil KAWSAY (Alu
 - Galería actualizada con las 4 etapas oficiales: 01 Planificación y organización (Matemática y Ciencias), 02 Creatividad y diseño (Participación de todas las disciplinas), 03 Elaboración y construcción (Humanidades e Ingeniería), 04 Detalles y promoción (Tecnología y Arte), cada una con su texto oficial en tarjeta con acento oliva; las disciplinas funcionan como subtítulos en pastilla.
 - Código QR real del proyecto (`/kawsay-qr.png`) centrado debajo de la etapa 04, en tarjeta blanca con borde oliva, con el texto "¿Quieres ver más sobre nuestro proceso? ¡Escanea el código QR!". Los marcos de fotografías de cada etapa siguen preparados para reemplazar.
 
+- Etapa 01 (Planificación y organización) ahora muestra sus dos fotografías reales (`/etapa-1-a.jpg`, `/etapa-1-b.jpg`) en los marcos de la galería; el resto de etapas mantiene marcos preparados.
+
 ## Implementado (2026-10-03 — etapa 6, modo oscuro)
 - Selector de tema (sol/luna) en el navbar, escritorio y móvil; preferencia persistida en localStorage (`kawsay-theme`), por defecto claro; transiciones de color suaves (~250ms).
 - Paleta nocturna natural en la config (`night`, `nightSoft`, `nightCard`, `nightLine`, `nightText`, `nightMuted`): verde bosque oscuro de fondo, tarjetas verde oscuro, bordes oliva tenue, textos crema, acentos salvia/ocre. La fotografía del hero y los marcos no se oscurecen; el logo usa un chip crema en oscuro sin alterarse. PERÚ mantiene rojo/blanco y AU guinda/amarillo con acentos suavizados para oscuro. Panel docente también adaptado. Toasts de sonner siguen el tema.
