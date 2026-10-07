@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { FlaskConical, HeartHandshake, Leaf, Package } from "lucide-react";
 import { Reveal, SectionTag } from "./Reveal";
-import PlaceholderImage from "./PlaceholderImage";
 
 const DISCIPLINAS = [
     { letra: "S", nombre: "Ciencia", circle: "bg-kawsay-pine", borde: "border-kawsay-pine/30" },
@@ -179,14 +178,14 @@ export default function Nosotros() {
                             }}
                             className="relative mx-auto flex max-w-2xl flex-col items-center gap-6 overflow-hidden rounded-[1.75rem] border border-kawsay-brown/30 bg-kawsay-sage/35 p-6 text-center shadow-soft dark:border-kawsay-brown/45 dark:bg-kawsay-nightCard sm:flex-row sm:p-7 sm:text-left"
                         >
-                            <PlaceholderImage
-                                label="Fotografía de la docente"
-                                sub="Por agregar"
-                                aspect="aspect-square"
-                                rounded="rounded-[1.5rem]"
-                                className="w-36 shrink-0 sm:w-40"
-                                testid="profesora-photo-placeholder"
-                            />
+                            <div className="relative w-36 shrink-0 overflow-hidden rounded-[1.5rem] border-2 border-kawsay-brown/30 shadow-soft dark:border-kawsay-brown/50 sm:w-40">
+                                <img
+                                    src="/docente.jpg"
+                                    alt="Fotografía de la profesora Mirian Patricia Vega Cruz"
+                                    data-testid="profesora-photo"
+                                    className="aspect-square w-full object-cover object-top"
+                                />
+                            </div>
                             <div>
                                 <span className="inline-flex items-center gap-2 rounded-full bg-kawsay-brown/10 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-kawsay-brown dark:bg-kawsay-brown/25 dark:text-[#C9A27C]">
                                     <Leaf className="h-3 w-3" />
