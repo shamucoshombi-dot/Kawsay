@@ -18,6 +18,10 @@ const BLOQUES = [
         title: "Creatividad y diseño",
         disciplina: "Participación de todas las disciplinas",
         texto: "Cada disciplina aportó propuestas e ideas para crear diseños originales, combinando creatividad, conocimientos y diferentes perspectivas.",
+        fotos: [
+            { src: "/etapa-2-b.jpg", alt: "Estudiantes creando juntos los diseños del proyecto" },
+            { src: "/etapa-2-a.jpg", alt: "Diseño creativo elaborado por los estudiantes" },
+        ],
     },
     {
         num: "03",
